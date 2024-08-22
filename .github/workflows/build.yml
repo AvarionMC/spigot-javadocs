@@ -24,14 +24,27 @@ jobs:
       - name: Cache Python packages
         uses: actions/cache@v4
         with:
+          save-always: true
           path: ~/.cache/pip
+
+
           key: ${{ runner.os }}-python
           restore-keys: |
             ${{ runner.os }}-python
 
+      - name: Cache BuildTools
+        uses: actions/cache@v4
+        with:
+          save-always: true
+          path: ~/BuildTools
+          key: ${{ runner.os }}-BuildTools
+          restore-keys: |
+            ${{ runner.os }}-BuildTools
+
       - name: Cache Maven packages
         uses: actions/cache@v4
         with:
+          save-always: true
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven
           restore-keys: |
@@ -50,20 +63,13 @@ jobs:
             19
             21
 
-      - name: Dumping environment
-        run: export
-
-      - name: Listing contents
-        run: |
-          find / -type f -name java 2>/dev/null || true
-
       - name: Install Python dependencies
         run: |
           pip install -U requests beautifulsoup4
 
       - name: Run Python build script
         run: |
-          python ../create_javadocs_jar_file.py
+          python .github/create_javadocs_jar_file.py
 
       - name: Archive output JARs
         if: success()
