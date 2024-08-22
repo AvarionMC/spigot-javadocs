@@ -49,7 +49,10 @@ jobs:
             18
             19
             21
-          cache: maven
+
+      - name: Listing contents
+        run: |
+          find / -type f -name java 2>/dev/null
 
       - name: Install Python dependencies
         run: |
