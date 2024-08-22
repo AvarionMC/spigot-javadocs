@@ -28,9 +28,15 @@ def get_version_from_filename(filename):
 def generate_sitemap(base_url, versions):
     print("Generating sitemaps")
     current_date = datetime.now(tz=timezone.utc).strftime("%Y-%m-%dT%H:%M:%S%z")
+    new_sitemaps_created = False
 
     # Generate individual sitemaps for each version
     for version in versions:
+        sitemap_file = output_dir / f"sitemap_{version}.xml"
+        if sitemap_file.exists():
+            print(f" > Skipping existing sitemap for version {version}")
+            continue
+
         sitemap_template = """<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
@@ -46,11 +52,14 @@ def generate_sitemap(base_url, versions):
             base_url=base_url, version=version, current_date=current_date
         )
 
-        with open(output_dir / f"sitemap_{version}.xml", "w") as f:
+        with open(sitemap_file, "w") as f:
             f.write(sitemap_content)
+        new_sitemaps_created = True
 
-    # Generate sitemap index
-    sitemap_index_template = """<?xml version="1.0" encoding="UTF-8"?>
+    # Generate sitemap index only if new sitemaps were created or it doesn't exist
+    sitemap_index_file = output_dir / "sitemap_index.xml"
+    if new_sitemaps_created or not sitemap_index_file.exists():
+        sitemap_index_template = """<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <sitemap>
         <loc>{{ base_url }}/sitemap_main.xml</loc>
@@ -64,16 +73,21 @@ def generate_sitemap(base_url, versions):
     {% endfor %}
 </sitemapindex>
 """
-    template = Template(sitemap_index_template)
-    sitemap_index_content = template.render(
-        base_url=base_url, versions=versions, current_date=current_date
-    )
+        template = Template(sitemap_index_template)
+        sitemap_index_content = template.render(
+            base_url=base_url, versions=versions, current_date=current_date
+        )
 
-    with open(output_dir / "sitemap_index.xml", "w") as f:
-        f.write(sitemap_index_content)
+        with open(sitemap_index_file, "w") as f:
+            f.write(sitemap_index_content)
+        print(" > Updated sitemap_index.xml")
+    else:
+        print(" > Skipping sitemap_index.xml (no new sitemaps)")
 
-    # Generate main sitemap
-    main_sitemap_template = """<?xml version="1.0" encoding="UTF-8"?>
+    # Generate main sitemap only if new sitemaps were created or it doesn't exist
+    main_sitemap_file = output_dir / "sitemap_main.xml"
+    if new_sitemaps_created or not main_sitemap_file.exists():
+        main_sitemap_template = """<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>{{ base_url }}/</loc>
@@ -83,23 +97,33 @@ def generate_sitemap(base_url, versions):
     </url>
 </urlset>
 """
-    template = Template(main_sitemap_template)
-    main_sitemap_content = template.render(base_url=base_url, current_date=current_date)
+        template = Template(main_sitemap_template)
+        main_sitemap_content = template.render(base_url=base_url, current_date=current_date)
 
-    with open(output_dir / "sitemap_main.xml", "w") as f:
-        f.write(main_sitemap_content)
+        with open(main_sitemap_file, "w") as f:
+            f.write(main_sitemap_content)
+        print(" > Updated sitemap_main.xml")
+    else:
+        print(" > Skipping sitemap_main.xml (no new sitemaps)")
+
+    return new_sitemaps_created
 
 
 def generate_robots_txt(base_url):
     print("Generating robots.txt")
 
-    robots_txt_content = f"""User-agent: *
+    robots_txt_file = output_dir / "robots.txt"
+    if not robots_txt_file.exists():
+        robots_txt_content = f"""User-agent: *
 Allow: /
 
 Sitemap: {base_url}/sitemap_index.xml
 """
-    with open(output_dir / "robots.txt", "w") as f:
-        f.write(robots_txt_content)
+        with open(robots_txt_file, "w") as f:
+            f.write(robots_txt_content)
+        print(" > Created robots.txt")
+    else:
+        print(" > Skipping existing robots.txt")
 
 
 def main():
@@ -150,8 +174,13 @@ def main():
     with open(output_dir / "index.html", "w") as f:
         f.write(html_content)
 
-    generate_sitemap(base_url, versions)
+    new_sitemaps = generate_sitemap(base_url, versions)
     generate_robots_txt(base_url)
+
+    if new_sitemaps:
+        print("New sitemaps were created. Don't forget to submit the updated sitemap_index.xml to search engines.")
+    else:
+        print("No new sitemaps were created. Existing sitemaps are up to date.")
 
 
 if __name__ == "__main__":
