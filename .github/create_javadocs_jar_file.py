@@ -77,6 +77,7 @@ def get_java_path(min_version, max_version):
 
 
 def run_build_tools(version, java_path):
+    run_command(f"rm -rf {SPIGOT_DIR}/Spigot-API/target")
     command = f"{java_path}/bin/java -jar {BUILD_TOOLS_JAR} --rev {version}"
     return run_command(command)
 
@@ -134,12 +135,10 @@ def write_xml_without_ns_prefix(tree, file_path):
 def copy_javadocs(version):
     target = OUTPUT_DIR / f"spigot-api-{version}.jar"
 
-    src = (
-        SPIGOT_DIR / "Spigot-API" / "target" / f"spigot-api-{version}-R0.1-SNAPSHOT-javadoc.jar"
-    )
+    src = next(iter(SPIGOT_DIR.joinpath("Spigot-API/target").glob(f"spigot-api-*-R0.1-SNAPSHOT-javadoc.jar")))
     if not src.exists():
         run_command(f"find {SPIGOT_DIR} -type f")
-        raise FileNotFoundError(f"Javadoc jar file '{src}' wasn't found.")
+        raise FileNotFoundError(f"Javadoc jar file for version '{version}' wasn't found.")
 
     target.write_bytes(src.read_bytes())
 
