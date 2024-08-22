@@ -8,13 +8,15 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write  # Need for saving the cache
+
 jobs:
   build:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-
-    permissions:
-        actions: write  # Need for saving the cache
 
     steps:
       - name: Checkout repository
@@ -24,7 +26,7 @@ jobs:
         run: find ~ -type f -name \*.jar || true
 
       - name: Setup Python 3.10
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: "3.10"
 
@@ -71,36 +73,10 @@ jobs:
         run: |
           python .github/generate_html_overview.py
 
-      - name: Add new jar files and create PR if changes exist
-        id: update-docs
-        run: |
-          git config --local user.name "GitHub Workflow"
-          git config --local user.email "workflow@github.com"
-          
-          NEW_BRANCH="update-javadocs-$(date +%Y%m%d%H%M%S)"
-          git checkout -b $NEW_BRANCH
-          
-          git add .
-          
-          if [[ -n "$(git status --porcelain)" ]]; then
-            # Changes exist, so commit and push
-            git commit -m "Added new Javadocs files"
-            git push --set-upstream origin $NEW_BRANCH
-            echo "changes_made=true" >> $GITHUB_OUTPUT
-            echo "branch_name=$NEW_BRANCH" >> $GITHUB_OUTPUT
-            echo "Changes were committed and pushed to branch $NEW_BRANCH"
-          else
-            # No changes
-            echo "changes_made=false" >> $GITHUB_OUTPUT
-            echo "No changes detected. Skipping commit and push."
-          fi
-
       - name: Create Pull Request
-        if: steps.update-docs.outputs.changes_made == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
           commit-message: "Add new Javadocs files"
-          branch: ${{ steps.update-docs.outputs.branch_name }}
           base: main
           title: "Update Javadocs"
           body: "This PR updates the Javadocs in the repository."
