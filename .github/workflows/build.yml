@@ -8,13 +8,16 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write  # Need for saving the cache
+
+
 jobs:
   build:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-
-    permissions:
-        actions: write  # Need for saving the cache
 
     steps:
       - name: Checkout repository
@@ -74,12 +77,6 @@ jobs:
       - name: Add new jar files and create PR if changes exist
         id: update-docs
         run: |
-          git config --local user.name "GitHub Workflow"
-          git config --local user.email "workflow@github.com"
-          
-          NEW_BRANCH="update-javadocs-$(date +%Y%m%d%H%M%S)"
-          git checkout -b $NEW_BRANCH
-          
           git add .
           
           if [[ -n "$(git status --porcelain)" ]]; then
@@ -87,7 +84,6 @@ jobs:
             git commit -m "Added new Javadocs files"
             git push --set-upstream origin $NEW_BRANCH
             echo "changes_made=true" >> $GITHUB_OUTPUT
-            echo "branch_name=$NEW_BRANCH" >> $GITHUB_OUTPUT
             echo "Changes were committed and pushed to branch $NEW_BRANCH"
           else
             # No changes
