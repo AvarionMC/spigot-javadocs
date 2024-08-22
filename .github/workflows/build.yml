@@ -50,9 +50,12 @@ jobs:
             19
             21
 
+      - name: Dumping environment
+        run: export
+
       - name: Listing contents
         run: |
-          find / -type f -name java 2>/dev/null
+          find / -type f -name java 2>/dev/null || true
 
       - name: Install Python dependencies
         run: |
