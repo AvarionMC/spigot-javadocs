@@ -9,6 +9,10 @@ ROOT = Path(__file__).parent.parent  # Root is 1 down from `.github` dir
 
 
 def extract_jar(jar_path, extract_path):
+    if extract_path.exists() and any(extract_path.iterdir()):
+        return
+
+    print(f" > Extracting '{jar_file.name}'")
     with zipfile.ZipFile(jar_path, "r") as zip_ref:
         zip_ref.extractall(extract_path)
 
@@ -19,6 +23,7 @@ def get_version_from_filename(filename):
 
 
 def main():
+    print("Processing spigot-api files")
     jar_dir = ROOT / "jar_files"
 
     versions = []
@@ -26,13 +31,12 @@ def main():
     for jar_file in jar_dir.glob("spigot-api-*.jar"):
         version = get_version_from_filename(jar_file.name)
         if version:
-            print(f" > Extracting '{jar_file.name}'")
-
             versions.append(version)
             version_dir = ROOT / version
             version_dir.mkdir(exist_ok=True, parents=True)
             extract_jar(jar_file, version_dir)
 
+    print("Generating index.html")
     versions.sort(key=lambda v: [int(x) for x in v.split(".")], reverse=True)
 
     html_template = """
