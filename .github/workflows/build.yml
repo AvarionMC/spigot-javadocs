@@ -63,17 +63,14 @@ jobs:
         run: |
           python .github/create_javadocs_jar_file.py
 
-      - name: Archive output JARs
-        if: success()
+      - name: Add new jar files to the repository
         run: |
-          mkdir -p javadocs
-          cp output/*.jar javadocs/
+          git config --local user.name "GitHub Workflow"
+          git config --local user.email "workflow@github.com"
 
-      - name: Upload Javadocs to repository
-        uses: actions/upload-artifact@v4
-        with:
-          name: javadocs
-          path: javadocs/
+          git add jar_files/
+          git commit -m "Added new Javadocs files"
+          git push
 
       - name: Post Cache Python packages
         if: always()
