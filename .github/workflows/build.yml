@@ -1,0 +1,127 @@
+name: Build
+
+on:
+  schedule:
+    - cron: '0 5 * * 6'  # Runs every Saturday at 05:00
+  workflow_dispatch:  # Allows manual triggering of the workflow
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    permissions:
+        actions: write  # Need for saving the cache
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Find all jar files in home directory
+        run: find ~ -type f -name \*.jar || true
+
+      - name: Setup Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Cache Python packages
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-python
+
+      - name: Cache BuildTools
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/BuildTools
+          key: ${{ runner.os }}-BuildTools
+
+      - name: Cache Maven packages
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven
+
+      - name: Set up all required JDKs
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'  # Use 'zulu' or another distribution if needed
+          java-version: |
+            8
+            11
+            16
+            17
+            18
+            19
+            21
+
+      - name: Install Python dependencies
+        run: |
+          pip install -U requests beautifulsoup4 jinja2
+
+      - name: Run Python build script
+        run: |
+          python .github/create_javadocs_jar_file.py
+
+      - name: Run Python HTML generation script
+        run: |
+          python .github/generate_html_overview.py
+
+      - name: Add new jar files and create PR if changes exist
+        id: update-docs
+        run: |
+          git config --local user.name "GitHub Workflow"
+          git config --local user.email "workflow@github.com"
+          
+          NEW_BRANCH="update-javadocs-$(date +%Y%m%d%H%M%S)"
+          git checkout -b $NEW_BRANCH
+          
+          git add .
+          
+          if [[ -n "$(git status --porcelain)" ]]; then
+            # Changes exist, so commit and push
+            git commit -m "Added new Javadocs files"
+            git push --set-upstream origin $NEW_BRANCH
+            echo "changes_made=true" >> $GITHUB_OUTPUT
+            echo "branch_name=$NEW_BRANCH" >> $GITHUB_OUTPUT
+            echo "Changes were committed and pushed to branch $NEW_BRANCH"
+          else
+            # No changes
+            echo "changes_made=false" >> $GITHUB_OUTPUT
+            echo "No changes detected. Skipping commit and push."
+          fi
+
+      - name: Create Pull Request
+        if: steps.update-docs.outputs.changes_made == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Add new Javadocs files"
+          branch: ${{ steps.update-docs.outputs.branch_name }}
+          base: main
+          title: "Update Javadocs"
+          body: "This PR updates the Javadocs in the repository."
+
+      - name: Post Cache Python packages
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-python
+
+      - name: Post Cache BuildTools
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: ~/BuildTools
+          key: ${{ runner.os }}-BuildTools
+
+      - name: Post Cache Maven packages
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven
