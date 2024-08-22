@@ -2,15 +2,15 @@ name: Build
 
 on:
   schedule:
-    - cron: '0 0 * * 0'  # Runs every Sunday at midnight
+    - cron: '0 5 * * 6'  # Runs every Saturday at 05:00
   workflow_dispatch:  # Allows manual triggering of the workflow
-  push:
-    branches:
-      - Adding-JavaDocs
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    permissions:
+        actions: write  # Need for saving the cache
 
     steps:
       - name: Checkout repository
