@@ -16,6 +16,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Find all jar files in home directory
+        run: find ~ -type f -name \*.jar
+        with:
+          continue-on-error: true
+
       - name: Setup Python 3.10
         uses: actions/setup-python@v4
         with:
@@ -26,8 +31,6 @@ jobs:
         with:
           save-always: true
           path: ~/.cache/pip
-
-
           key: ${{ runner.os }}-python
           restore-keys: |
             ${{ runner.os }}-python

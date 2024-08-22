@@ -8,9 +8,10 @@ import re
 from pathlib import Path
 from bs4 import BeautifulSoup
 
+CWD = Path.cwd().resolve().absolute()
 BASE_URL = "https://hub.spigotmc.org/versions/"
 BUILD_TOOLS_JAR = Path.home() / "BuildTools/BuildTools.jar"
-OUTPUT_DIR = Path.home() / "SpigotJavadocs"
+OUTPUT_DIR = CWD / "jar_files"
 SPIGOT_DIR = BUILD_TOOLS_JAR.parent / "Spigot"
 
 BUILD_TOOLS_JAR.parent.mkdir(parents=True, exist_ok=True)
@@ -131,20 +132,21 @@ def write_xml_without_ns_prefix(tree, file_path):
 
 
 def copy_javadocs(version):
-    target = OUTPUT_DIR / "spigot-api-{version}.jar"
+    target = OUTPUT_DIR / f"spigot-api-{version}.jar"
 
     src = (
-        SPIGOT_DIR / "Spigot-API" / "target" / f"spigot-api-{version}-R0.1-SNAPSHOT.jar"
+        SPIGOT_DIR / "Spigot-API" / "target" / f"spigot-api-{version}-R0.1-SNAPSHOT-javadoc.jar"
     )
     if not src.exists():
+        run_command(f"find {SPIGOT_DIR} -type f")
         raise FileNotFoundError(f"Javadoc jar file '{src}' wasn't found.")
 
     target.write_bytes(src.read_bytes())
 
 
 def is_version_processed(version):
-    version_dir = OUTPUT_DIR / version
-    return version_dir.exists() and any(version_dir.iterdir())
+    version_file = OUTPUT_DIR / f"spigot-api-{version}.jar"
+    return version_file.exists()
 
 
 def run_command(command, env=None):
@@ -227,6 +229,8 @@ def process_version(version):
 
 
 def main():
+    os.chdir(BUILD_TOOLS_JAR.parent)
+
     if not BUILD_TOOLS_JAR.exists():
         print("Downloading BuildTools.jar...")
         download_build_tools()
