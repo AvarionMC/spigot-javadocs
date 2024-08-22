@@ -1,0 +1,69 @@
+name: Build
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Runs every Sunday at midnight
+  workflow_dispatch:  # Allows manual triggering of the workflow
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10
+
+      - name: Cache Python packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-python
+          restore-keys: |
+            ${{ runner.os }}-python
+
+      - name: Cache Maven packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven
+          restore-keys: |
+            ${{ runner.os }}-maven
+
+      - name: Set up all required JDKs
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'  # Use 'zulu' or another distribution if needed
+          java-version: |
+            8
+            11
+            16
+            17
+            18
+            19
+            21
+          cache: maven
+
+      - name: Install Python dependencies
+        run: |
+          pip install -U requests beautifulsoup4
+
+      - name: Run Python build script
+        run: |
+          python ../create_javadocs_jar_file.py
+
+      - name: Archive output JARs
+        if: success()
+        run: |
+          mkdir -p javadocs
+          cp output/*.jar javadocs/
+
+      - name: Upload Javadocs to repository
+        uses: actions/upload-artifact@v4
+        with:
+          name: javadocs
+          path: javadocs/
