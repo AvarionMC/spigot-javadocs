@@ -74,7 +74,7 @@ jobs:
           python .github/generate_html_overview.py
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           commit-message: "Add new Javadocs files"
           base: main
