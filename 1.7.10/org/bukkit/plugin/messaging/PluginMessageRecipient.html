@@ -21,7 +21,7 @@
 <!-- ========= START OF TOP NAVBAR ======= -->
 <div class="topNav"><a name="navbar_top">
 <!--   -->
-</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+</a><a href="PluginMessageRecipient.html#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
@@ -37,11 +37,11 @@
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../org/bukkit/plugin/messaging/PluginMessageListenerRegistration.html" title="class in org.bukkit.plugin.messaging"><span class="strong">Prev Class</span></a></li>
-<li><a href="../../../../org/bukkit/plugin/messaging/ReservedChannelException.html" title="class in org.bukkit.plugin.messaging"><span class="strong">Next Class</span></a></li>
+<li><a href="PluginMessageListenerRegistration.html" title="class in org.bukkit.plugin.messaging"><span class="strong">Prev Class</span></a></li>
+<li><a href="ReservedChannelException.html" title="class in org.bukkit.plugin.messaging"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../../../index.html?org/bukkit/plugin/messaging/PluginMessageRecipient.html" target="_top">Frames</a></li>
+<li><a href="../../../../index.html%3Forg%252Fbukkit%252Fplugin%252Fmessaging%252FPluginMessageRecipient.html" target="_top">Frames</a></li>
 <li><a href="PluginMessageRecipient.html" target="_top">No Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_top">
@@ -65,13 +65,13 @@
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
-<li><a href="#method_summary">Method</a></li>
+<li><a href="PluginMessageRecipient.html#method_summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
-<li><a href="#method_detail">Method</a></li>
+<li><a href="PluginMessageRecipient.html#method_detail">Method</a></li>
 </ul>
 </div>
 <a name="skip-navbar_top">
@@ -89,7 +89,7 @@
 <li class="blockList">
 <dl>
 <dt>All Known Subinterfaces:</dt>
-<dd><a href="../../../../org/bukkit/entity/Player.html" title="interface in org.bukkit.entity">Player</a>, <a href="../../../../org/bukkit/Server.html" title="interface in org.bukkit">Server</a>, <a href="../../../../org/bukkit/World.html" title="interface in org.bukkit">World</a></dd>
+<dd><a href="../../entity/Player.html" title="interface in org.bukkit.entity">Player</a>, <a href="../../Server.html" title="interface in org.bukkit">Server</a>, <a href="../../World.html" title="interface in org.bukkit">World</a></dd>
 </dl>
 <hr>
 <br>
@@ -115,14 +115,14 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/6/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/bukkit/plugin/messaging/PluginMessageRecipient.html#getListeningPluginChannels()">getListeningPluginChannels</a></strong>()</code>
+<td class="colLast"><code><strong><a href="PluginMessageRecipient.html#getListeningPluginChannels()">getListeningPluginChannels</a></strong>()</code>
 <div class="block">Gets a set containing all the Plugin Channels that this client is
  listening on.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/bukkit/plugin/messaging/PluginMessageRecipient.html#sendPluginMessage(org.bukkit.plugin.Plugin,%20java.lang.String,%20byte[])">sendPluginMessage</a></strong>(<a href="../../../../org/bukkit/plugin/Plugin.html" title="interface in org.bukkit.plugin">Plugin</a>&nbsp;source,
+<td class="colLast"><code><strong><a href="PluginMessageRecipient.html#sendPluginMessage(org.bukkit.plugin.Plugin,%20java.lang.String,%20byte[])">sendPluginMessage</a></strong>(<a href="../Plugin.html" title="interface in org.bukkit.plugin">Plugin</a>&nbsp;source,
                  <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;channel,
                  byte[]&nbsp;message)</code>
 <div class="block">Sends this recipient a Plugin Message on the specified outgoing
@@ -150,13 +150,13 @@
 <ul class="blockList">
 <li class="blockList">
 <h4>sendPluginMessage</h4>
-<pre>void&nbsp;sendPluginMessage(<a href="../../../../org/bukkit/plugin/Plugin.html" title="interface in org.bukkit.plugin">Plugin</a>&nbsp;source,
+<pre>void&nbsp;sendPluginMessage(<a href="../Plugin.html" title="interface in org.bukkit.plugin">Plugin</a>&nbsp;source,
                      <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;channel,
                      byte[]&nbsp;message)</pre>
 <div class="block">Sends this recipient a Plugin Message on the specified outgoing
  channel.
  <p>
- The message may not be larger than <a href="../../../../org/bukkit/plugin/messaging/Messenger.html#MAX_MESSAGE_SIZE"><code>Messenger.MAX_MESSAGE_SIZE</code></a>
+ The message may not be larger than <a href="Messenger.html#MAX_MESSAGE_SIZE"><code>Messenger.MAX_MESSAGE_SIZE</code></a>
  bytes, and the plugin must be registered to send messages on the
  specified channel.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>source</code> - The plugin that sent this message.</dd><dd><code>channel</code> - The channel to send this message on.</dd><dd><code>message</code> - The raw message to send.</dd>
@@ -165,8 +165,8 @@
      disabled.</dd>
 <dd><code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - Thrown if source, channel or message
      is null.</dd>
-<dd><code><a href="../../../../org/bukkit/plugin/messaging/MessageTooLargeException.html" title="class in org.bukkit.plugin.messaging">MessageTooLargeException</a></code> - Thrown if the message is too big.</dd>
-<dd><code><a href="../../../../org/bukkit/plugin/messaging/ChannelNotRegisteredException.html" title="class in org.bukkit.plugin.messaging">ChannelNotRegisteredException</a></code> - Thrown if the channel is not
+<dd><code><a href="MessageTooLargeException.html" title="class in org.bukkit.plugin.messaging">MessageTooLargeException</a></code> - Thrown if the message is too big.</dd>
+<dd><code><a href="ChannelNotRegisteredException.html" title="class in org.bukkit.plugin.messaging">ChannelNotRegisteredException</a></code> - Thrown if the channel is not
      registered for this plugin.</dd></dl>
 </li>
 </ul>
@@ -192,7 +192,7 @@
 <!-- ======= START OF BOTTOM NAVBAR ====== -->
 <div class="bottomNav"><a name="navbar_bottom">
 <!--   -->
-</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+</a><a href="PluginMessageRecipient.html#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
@@ -208,11 +208,11 @@
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../org/bukkit/plugin/messaging/PluginMessageListenerRegistration.html" title="class in org.bukkit.plugin.messaging"><span class="strong">Prev Class</span></a></li>
-<li><a href="../../../../org/bukkit/plugin/messaging/ReservedChannelException.html" title="class in org.bukkit.plugin.messaging"><span class="strong">Next Class</span></a></li>
+<li><a href="PluginMessageListenerRegistration.html" title="class in org.bukkit.plugin.messaging"><span class="strong">Prev Class</span></a></li>
+<li><a href="ReservedChannelException.html" title="class in org.bukkit.plugin.messaging"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../../../index.html?org/bukkit/plugin/messaging/PluginMessageRecipient.html" target="_top">Frames</a></li>
+<li><a href="../../../../index.html%3Forg%252Fbukkit%252Fplugin%252Fmessaging%252FPluginMessageRecipient.html" target="_top">Frames</a></li>
 <li><a href="PluginMessageRecipient.html" target="_top">No Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_bottom">
@@ -236,13 +236,13 @@
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
-<li><a href="#method_summary">Method</a></li>
+<li><a href="PluginMessageRecipient.html#method_summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
-<li><a href="#method_detail">Method</a></li>
+<li><a href="PluginMessageRecipient.html#method_detail">Method</a></li>
 </ul>
 </div>
 <a name="skip-navbar_bottom">

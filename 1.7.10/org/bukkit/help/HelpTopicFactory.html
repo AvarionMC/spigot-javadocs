@@ -21,7 +21,7 @@
 <!-- ========= START OF TOP NAVBAR ======= -->
 <div class="topNav"><a name="navbar_top">
 <!--   -->
-</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+</a><a href="HelpTopicFactory.html#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
@@ -37,11 +37,11 @@
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../org/bukkit/help/HelpTopicComparator.TopicNameComparator.html" title="class in org.bukkit.help"><span class="strong">Prev Class</span></a></li>
-<li><a href="../../../org/bukkit/help/IndexHelpTopic.html" title="class in org.bukkit.help"><span class="strong">Next Class</span></a></li>
+<li><a href="HelpTopicComparator.TopicNameComparator.html" title="class in org.bukkit.help"><span class="strong">Prev Class</span></a></li>
+<li><a href="IndexHelpTopic.html" title="class in org.bukkit.help"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../../index.html?org/bukkit/help/HelpTopicFactory.html" target="_top">Frames</a></li>
+<li><a href="../../../index.html%3Forg%252Fbukkit%252Fhelp%252FHelpTopicFactory.html" target="_top">Frames</a></li>
 <li><a href="HelpTopicFactory.html" target="_top">No Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_top">
@@ -65,13 +65,13 @@
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
-<li><a href="#method_summary">Method</a></li>
+<li><a href="HelpTopicFactory.html#method_summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
-<li><a href="#method_detail">Method</a></li>
+<li><a href="HelpTopicFactory.html#method_detail">Method</a></li>
 </ul>
 </div>
 <a name="skip-navbar_top">
@@ -81,7 +81,7 @@
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">org.bukkit.help</div>
-<h2 title="Interface HelpTopicFactory" class="title">Interface HelpTopicFactory&lt;TCommand extends <a href="../../../org/bukkit/command/Command.html" title="class in org.bukkit.command">Command</a>&gt;</h2>
+<h2 title="Interface HelpTopicFactory" class="title">Interface HelpTopicFactory&lt;TCommand extends <a href="../command/Command.html" title="class in org.bukkit.command">Command</a>&gt;</h2>
 </div>
 <div class="contentContainer">
 <div class="description">
@@ -90,8 +90,8 @@
 <dl><dt><span class="strong">Type Parameters:</span></dt><dd><code>TCommand</code> - The base class for your custom commands.</dd></dl>
 <hr>
 <br>
-<pre>public interface <span class="strong">HelpTopicFactory&lt;TCommand extends <a href="../../../org/bukkit/command/Command.html" title="class in org.bukkit.command">Command</a>&gt;</span></pre>
-<div class="block">A HelpTopicFactory is used to create custom <a href="../../../org/bukkit/help/HelpTopic.html" title="class in org.bukkit.help"><code>HelpTopic</code></a> objects from
+<pre>public interface <span class="strong">HelpTopicFactory&lt;TCommand extends <a href="../command/Command.html" title="class in org.bukkit.command">Command</a>&gt;</span></pre>
+<div class="block">A HelpTopicFactory is used to create custom <a href="HelpTopic.html" title="class in org.bukkit.help"><code>HelpTopic</code></a> objects from
  commands that inherit from a common base class or have executors that
  inherit from a common base class. You can use a custom HelpTopic to change
  the way all the commands in your plugin display in the help. If your plugin
@@ -104,13 +104,13 @@
  custom HelpTopicFactory that accepts your custom command base class and
  instantiates an instance of your custom HelpTopic from it. Finally,
  register your HelpTopicFactory against your command base class using the
- <a href="../../../org/bukkit/help/HelpMap.html#registerHelpTopicFactory(java.lang.Class,%20org.bukkit.help.HelpTopicFactory)"><code>HelpMap.registerHelpTopicFactory(Class, HelpTopicFactory)</code></a> method.
+ <a href="HelpMap.html#registerHelpTopicFactory(java.lang.Class,%20org.bukkit.help.HelpTopicFactory)"><code>HelpMap.registerHelpTopicFactory(Class, HelpTopicFactory)</code></a> method.
  <p>
  As the help system iterates over all registered commands to make help
  topics, it first checks to see if there is a HelpTopicFactory registered
  for the command's base class. If so, the factory is used to make a help
  topic rather than a generic help topic. If no factory is found for the
- command's base class and the command derives from <a href="../../../org/bukkit/command/PluginCommand.html" title="class in org.bukkit.command"><code>PluginCommand</code></a>, then the type of the command's executor
+ command's base class and the command derives from <a href="../command/PluginCommand.html" title="class in org.bukkit.command"><code>PluginCommand</code></a>, then the type of the command's executor
  is inspected looking for a registered HelpTopicFactory. Finally, if no
  factory is found, a generic help topic is created for the command.</div>
 </li>
@@ -132,8 +132,8 @@
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../org/bukkit/help/HelpTopic.html" title="class in org.bukkit.help">HelpTopic</a></code></td>
-<td class="colLast"><code><strong><a href="../../../org/bukkit/help/HelpTopicFactory.html#createTopic(TCommand)">createTopic</a></strong>(<a href="../../../org/bukkit/help/HelpTopicFactory.html" title="type parameter in HelpTopicFactory">TCommand</a>&nbsp;command)</code>
+<td class="colFirst"><code><a href="HelpTopic.html" title="class in org.bukkit.help">HelpTopic</a></code></td>
+<td class="colLast"><code><strong><a href="HelpTopicFactory.html#createTopic(TCommand)">createTopic</a></strong>(<a href="HelpTopicFactory.html" title="type parameter in HelpTopicFactory">TCommand</a>&nbsp;command)</code>
 <div class="block">This method accepts a command deriving from a custom command base class
  and constructs a custom HelpTopic for it.</div>
 </td>
@@ -161,7 +161,7 @@
 <ul class="blockListLast">
 <li class="blockList">
 <h4>createTopic</h4>
-<pre><a href="../../../org/bukkit/help/HelpTopic.html" title="class in org.bukkit.help">HelpTopic</a>&nbsp;createTopic(<a href="../../../org/bukkit/help/HelpTopicFactory.html" title="type parameter in HelpTopicFactory">TCommand</a>&nbsp;command)</pre>
+<pre><a href="HelpTopic.html" title="class in org.bukkit.help">HelpTopic</a>&nbsp;createTopic(<a href="HelpTopicFactory.html" title="type parameter in HelpTopicFactory">TCommand</a>&nbsp;command)</pre>
 <div class="block">This method accepts a command deriving from a custom command base class
  and constructs a custom HelpTopic for it.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>command</code> - The custom command to build a help topic for.</dd>
@@ -179,7 +179,7 @@
 <!-- ======= START OF BOTTOM NAVBAR ====== -->
 <div class="bottomNav"><a name="navbar_bottom">
 <!--   -->
-</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+</a><a href="HelpTopicFactory.html#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
@@ -195,11 +195,11 @@
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../org/bukkit/help/HelpTopicComparator.TopicNameComparator.html" title="class in org.bukkit.help"><span class="strong">Prev Class</span></a></li>
-<li><a href="../../../org/bukkit/help/IndexHelpTopic.html" title="class in org.bukkit.help"><span class="strong">Next Class</span></a></li>
+<li><a href="HelpTopicComparator.TopicNameComparator.html" title="class in org.bukkit.help"><span class="strong">Prev Class</span></a></li>
+<li><a href="IndexHelpTopic.html" title="class in org.bukkit.help"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../../index.html?org/bukkit/help/HelpTopicFactory.html" target="_top">Frames</a></li>
+<li><a href="../../../index.html%3Forg%252Fbukkit%252Fhelp%252FHelpTopicFactory.html" target="_top">Frames</a></li>
 <li><a href="HelpTopicFactory.html" target="_top">No Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_bottom">
@@ -223,13 +223,13 @@
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
-<li><a href="#method_summary">Method</a></li>
+<li><a href="HelpTopicFactory.html#method_summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
-<li><a href="#method_detail">Method</a></li>
+<li><a href="HelpTopicFactory.html#method_detail">Method</a></li>
 </ul>
 </div>
 <a name="skip-navbar_bottom">

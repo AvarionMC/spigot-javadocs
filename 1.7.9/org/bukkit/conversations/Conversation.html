@@ -21,7 +21,7 @@
 <!-- ========= START OF TOP NAVBAR ======= -->
 <div class="topNav"><a name="navbar_top">
 <!--   -->
-</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+</a><a href="Conversation.html#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
@@ -37,11 +37,11 @@
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../org/bukkit/conversations/Conversable.html" title="interface in org.bukkit.conversations"><span class="strong">Prev Class</span></a></li>
-<li><a href="../../../org/bukkit/conversations/Conversation.ConversationState.html" title="enum in org.bukkit.conversations"><span class="strong">Next Class</span></a></li>
+<li><a href="Conversable.html" title="interface in org.bukkit.conversations"><span class="strong">Prev Class</span></a></li>
+<li><a href="Conversation.ConversationState.html" title="enum in org.bukkit.conversations"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../../index.html?org/bukkit/conversations/Conversation.html" target="_top">Frames</a></li>
+<li><a href="../../../index.html%3Forg%252Fbukkit%252Fconversations%252FConversation.html" target="_top">Frames</a></li>
 <li><a href="Conversation.html" target="_top">No Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_top">
@@ -62,16 +62,16 @@
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
-<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
-<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_summary">Method</a></li>
+<li><a href="Conversation.html#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="Conversation.html#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="Conversation.html#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="Conversation.html#method_summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
-<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_detail">Method</a></li>
+<li><a href="Conversation.html#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="Conversation.html#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="Conversation.html#method_detail">Method</a></li>
 </ul>
 </div>
 <a name="skip-navbar_top">
@@ -102,16 +102,16 @@ extends <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?
 <div class="block">The Conversation class is responsible for tracking the current state of a
  conversation, displaying prompts to the user, and dispatching the user's
  response to the appropriate place. Conversation objects are not typically
- instantiated directly. Instead a <a href="../../../org/bukkit/conversations/ConversationFactory.html" title="class in org.bukkit.conversations"><code>ConversationFactory</code></a> is used to
+ instantiated directly. Instead a <a href="ConversationFactory.html" title="class in org.bukkit.conversations"><code>ConversationFactory</code></a> is used to
  construct identical conversations on demand.
  <p>
- Conversation flow consists of a directed graph of <a href="../../../org/bukkit/conversations/Prompt.html" title="interface in org.bukkit.conversations"><code>Prompt</code></a> objects.
+ Conversation flow consists of a directed graph of <a href="Prompt.html" title="interface in org.bukkit.conversations"><code>Prompt</code></a> objects.
  Each time a prompt gets input from the user, it must return the next prompt
  in the graph. Since each Prompt chooses the next Prompt, complex
  conversation trees can be implemented where the nature of the player's
  response directs the flow of the conversation.
  <p>
- Each conversation has a <a href="../../../org/bukkit/conversations/ConversationPrefix.html" title="interface in org.bukkit.conversations"><code>ConversationPrefix</code></a> that prepends all output
+ Each conversation has a <a href="ConversationPrefix.html" title="interface in org.bukkit.conversations"><code>ConversationPrefix</code></a> that prepends all output
  from the conversation to the player. The ConversationPrefix can be used to
  display the plugin name or conversation status as the conversation evolves.
  <p>
@@ -120,7 +120,7 @@ extends <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?
  reached, the conversation is abandoned and the user's incoming and outgoing
  chat is returned to normal.
  <p>
- You should not construct a conversation manually. Instead, use the <a href="../../../org/bukkit/conversations/ConversationFactory.html" title="class in org.bukkit.conversations"><code>ConversationFactory</code></a> for access to all available options.</div>
+ You should not construct a conversation manually. Instead, use the <a href="ConversationFactory.html" title="class in org.bukkit.conversations"><code>ConversationFactory</code></a> for access to all available options.</div>
 </li>
 </ul>
 </div>
@@ -141,7 +141,7 @@ extends <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
-<td class="colLast"><code><strong><a href="../../../org/bukkit/conversations/Conversation.ConversationState.html" title="enum in org.bukkit.conversations">Conversation.ConversationState</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="Conversation.ConversationState.html" title="enum in org.bukkit.conversations">Conversation.ConversationState</a></strong></code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -159,32 +159,32 @@ extends <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?
 <th class="colLast" scope="col">Field and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/bukkit/conversations/ConversationAbandonedListener.html" title="interface in org.bukkit.conversations">ConversationAbandonedListener</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../org/bukkit/conversations/Conversation.html#abandonedListeners">abandonedListeners</a></strong></code>&nbsp;</td>
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="ConversationAbandonedListener.html" title="interface in org.bukkit.conversations">ConversationAbandonedListener</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="Conversation.html#abandonedListeners">abandonedListeners</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/bukkit/conversations/ConversationCanceller.html" title="interface in org.bukkit.conversations">ConversationCanceller</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../org/bukkit/conversations/Conversation.html#cancellers">cancellers</a></strong></code>&nbsp;</td>
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="ConversationCanceller.html" title="interface in org.bukkit.conversations">ConversationCanceller</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="Conversation.html#cancellers">cancellers</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="../../../org/bukkit/conversations/ConversationContext.html" title="class in org.bukkit.conversations">ConversationContext</a></code></td>
-<td class="colLast"><code><strong><a href="../../../org/bukkit/conversations/Conversation.html#context">context</a></strong></code>&nbsp;</td>
+<td class="colFirst"><code>protected <a href="ConversationContext.html" title="class in org.bukkit.conversations">ConversationContext</a></code></td>
+<td class="colLast"><code><strong><a href="Conversation.html#context">context</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="../../../org/bukkit/conversations/Prompt.html" title="interface in org.bukkit.conversations">Prompt</a></code></td>
-<td class="colLast"><code><strong><a href="../../../org/bukkit/conversations/Conversation.html#currentPrompt">currentPrompt</a></strong></code>&nbsp;</td>
+<td class="colFirst"><code>protected <a href="Prompt.html" title="interface in org.bukkit.conversations">Prompt</a></code></td>
+<td class="colLast"><code><strong><a href="Conversation.html#currentPrompt">currentPrompt</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../org/bukkit/conversations/Conversation.html#localEchoEnabled">localEchoEnabled</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="Conversation.html#localEchoEnabled">localEchoEnabled</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../org/bukkit/conversations/Conversation.html#modal">modal</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="Conversation.html#modal">modal</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="../../../org/bukkit/conversations/ConversationPrefix.html" title="interface in org.bukkit.conversations">ConversationPrefix</a></code></td>
-<td class="colLast"><code><strong><a href="../../../org/bukkit/conversations/Conversation.html#prefix">prefix</a></strong></code>&nbsp;</td>
+<td class="colFirst"><code>protected <a href="ConversationPrefix.html" title="interface in org.bukkit.conversations">ConversationPrefix</a></code></td>
+<td class="colLast"><code><strong><a href="Conversation.html#prefix">prefix</a></strong></code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -201,16 +201,16 @@ extends <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><strong><a href="../../../org/bukkit/conversations/Conversation.html#Conversation(org.bukkit.plugin.Plugin, org.bukkit.conversations.Conversable, org.bukkit.conversations.Prompt)">Conversation</a></strong>(<a href="../../../org/bukkit/plugin/Plugin.html" title="interface in org.bukkit.plugin">Plugin</a>&nbsp;plugin,
-            <a href="../../../org/bukkit/conversations/Conversable.html" title="interface in org.bukkit.conversations">Conversable</a>&nbsp;forWhom,
-            <a href="../../../org/bukkit/conversations/Prompt.html" title="interface in org.bukkit.conversations">Prompt</a>&nbsp;firstPrompt)</code>
+<td class="colOne"><code><strong><a href="Conversation.html#Conversation(org.bukkit.plugin.Plugin, org.bukkit.conversations.Conversable, org.bukkit.conversations.Prompt)">Conversation</a></strong>(<a href="../plugin/Plugin.html" title="interface in org.bukkit.plugin">Plugin</a>&nbsp;plugin,
+            <a href="Conversable.html" title="interface in org.bukkit.conversations">Conversable</a>&nbsp;forWhom,
+            <a href="Prompt.html" title="interface in org.bukkit.conversations">Prompt</a>&nbsp;firstPrompt)</code>
 <div class="block">Initializes a new Conversation.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colOne"><code><strong><a href="../../../org/bukkit/conversations/Conversation.html#Conversation(org.bukkit.plugin.Plugin, org.bukkit.conversations.Conversable, org.bukkit.conversations.Prompt, java.util.Map)">Conversation</a></strong>(<a href="../../../org/bukkit/plugin/Plugin.html" title="interface in org.bukkit.plugin">Plugin</a>&nbsp;plugin,
-            <a href="../../../org/bukkit/conversations/Conversable.html" title="interface in org.bukkit.conversations">Conversable</a>&nbsp;forWhom,
-            <a href="../../../org/bukkit/conversations/Prompt.html" title="interface in org.bukkit.conversations">Prompt</a>&nbsp;firstPrompt,
+<td class="colOne"><code><strong><a href="Conversation.html#Conversation(org.bukkit.plugin.Plugin, org.bukkit.conversations.Conversable, org.bukkit.conversations.Prompt, java.util.Map)">Conversation</a></strong>(<a href="../plugin/Plugin.html" title="interface in org.bukkit.plugin">Plugin</a>&nbsp;plugin,
+            <a href="Conversable.html" title="interface in org.bukkit.conversations">Conversable</a>&nbsp;forWhom,
+            <a href="Prompt.html" title="interface in org.bukkit.conversations">Prompt</a>&nbsp;firstPrompt,
             <a href="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;initialSessionData)</code>
 <div class="block">Initializes a new Conversation.</div>
 </td>
@@ -232,94 +232,94 @@ extends <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../org/bukkit/conversations/Conversation.html#abandon()">abandon</a></strong>()</code>
+<td class="colLast"><code><strong><a href="Conversation.html#abandon()">abandon</a></strong>()</code>
 <div class="block">Abandons and resets the current conversation.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../org/bukkit/conversations/Conversation.html#abandon(org.bukkit.conversations.ConversationAbandonedEvent)">abandon</a></strong>(<a href="../../../org/bukkit/conversations/ConversationAbandonedEvent.html" title="class in org.bukkit.conversations">ConversationAbandonedEvent</a>&nbsp;details)</code>
+<td class="colLast"><code><strong><a href="Conversation.html#abandon(org.bukkit.conversations.ConversationAbandonedEvent)">abandon</a></strong>(<a href="ConversationAbandonedEvent.html" title="class in org.bukkit.conversations">ConversationAbandonedEvent</a>&nbsp;details)</code>
 <div class="block">Abandons and resets the current conversation.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../org/bukkit/conversations/Conversation.html#acceptInput(java.lang.String)">acceptInput</a></strong>(<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;input)</code>
+<td class="colLast"><code><strong><a href="Conversation.html#acceptInput(java.lang.String)">acceptInput</a></strong>(<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;input)</code>
 <div class="block">Passes player input into the current prompt.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../org/bukkit/conversations/Conversation.html#addConversationAbandonedListener(org.bukkit.conversations.ConversationAbandonedListener)">addConversationAbandonedListener</a></strong>(<a href="../../../org/bukkit/conversations/ConversationAbandonedListener.html" title="interface in org.bukkit.conversations">ConversationAbandonedListener</a>&nbsp;listener)</code>
-<div class="block">Adds a <a href="../../../org/bukkit/conversations/ConversationAbandonedListener.html" title="interface in org.bukkit.conversations"><code>ConversationAbandonedListener</code></a>.</div>
+<td class="colLast"><code><strong><a href="Conversation.html#addConversationAbandonedListener(org.bukkit.conversations.ConversationAbandonedListener)">addConversationAbandonedListener</a></strong>(<a href="ConversationAbandonedListener.html" title="interface in org.bukkit.conversations">ConversationAbandonedListener</a>&nbsp;listener)</code>
+<div class="block">Adds a <a href="ConversationAbandonedListener.html" title="interface in org.bukkit.conversations"><code>ConversationAbandonedListener</code></a>.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../org/bukkit/conversations/Conversation.html#begin()">begin</a></strong>()</code>
+<td class="colLast"><code><strong><a href="Conversation.html#begin()">begin</a></strong>()</code>
 <div class="block">Displays the first prompt of this conversation and begins redirecting
  the user's chat responses.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/bukkit/conversations/ConversationCanceller.html" title="interface in org.bukkit.conversations">ConversationCanceller</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../org/bukkit/conversations/Conversation.html#getCancellers()">getCancellers</a></strong>()</code>
-<div class="block">Gets the list of <a href="../../../org/bukkit/conversations/ConversationCanceller.html" title="interface in org.bukkit.conversations"><code>ConversationCanceller</code></a>s</div>
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="ConversationCanceller.html" title="interface in org.bukkit.conversations">ConversationCanceller</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="Conversation.html#getCancellers()">getCancellers</a></strong>()</code>
+<div class="block">Gets the list of <a href="ConversationCanceller.html" title="interface in org.bukkit.conversations"><code>ConversationCanceller</code></a>s</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../org/bukkit/conversations/ConversationContext.html" title="class in org.bukkit.conversations">ConversationContext</a></code></td>
-<td class="colLast"><code><strong><a href="../../../org/bukkit/conversations/Conversation.html#getContext()">getContext</a></strong>()</code>
-<div class="block">Returns the Conversation's <a href="../../../org/bukkit/conversations/ConversationContext.html" title="class in org.bukkit.conversations"><code>ConversationContext</code></a>.</div>
+<td class="colFirst"><code><a href="ConversationContext.html" title="class in org.bukkit.conversations">ConversationContext</a></code></td>
+<td class="colLast"><code><strong><a href="Conversation.html#getContext()">getContext</a></strong>()</code>
+<div class="block">Returns the Conversation's <a href="ConversationContext.html" title="class in org.bukkit.conversations"><code>ConversationContext</code></a>.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="../../../org/bukkit/conversations/Conversable.html" title="interface in org.bukkit.conversations">Conversable</a></code></td>
-<td class="colLast"><code><strong><a href="../../../org/bukkit/conversations/Conversation.html#getForWhom()">getForWhom</a></strong>()</code>
+<td class="colFirst"><code><a href="Conversable.html" title="interface in org.bukkit.conversations">Conversable</a></code></td>
+<td class="colLast"><code><strong><a href="Conversation.html#getForWhom()">getForWhom</a></strong>()</code>
 <div class="block">Gets the entity for whom this conversation is mediating.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../org/bukkit/conversations/ConversationPrefix.html" title="interface in org.bukkit.conversations">ConversationPrefix</a></code></td>
-<td class="colLast"><code><strong><a href="../../../org/bukkit/conversations/Conversation.html#getPrefix()">getPrefix</a></strong>()</code>
-<div class="block">Gets the <a href="../../../org/bukkit/conversations/ConversationPrefix.html" title="interface in org.bukkit.conversations"><code>ConversationPrefix</code></a> that prepends all output from this
+<td class="colFirst"><code><a href="ConversationPrefix.html" title="interface in org.bukkit.conversations">ConversationPrefix</a></code></td>
+<td class="colLast"><code><strong><a href="Conversation.html#getPrefix()">getPrefix</a></strong>()</code>
+<div class="block">Gets the <a href="ConversationPrefix.html" title="interface in org.bukkit.conversations"><code>ConversationPrefix</code></a> that prepends all output from this
  conversation.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="../../../org/bukkit/conversations/Conversation.ConversationState.html" title="enum in org.bukkit.conversations">Conversation.ConversationState</a></code></td>
-<td class="colLast"><code><strong><a href="../../../org/bukkit/conversations/Conversation.html#getState()">getState</a></strong>()</code>
+<td class="colFirst"><code><a href="Conversation.ConversationState.html" title="enum in org.bukkit.conversations">Conversation.ConversationState</a></code></td>
+<td class="colLast"><code><strong><a href="Conversation.html#getState()">getState</a></strong>()</code>
 <div class="block">Returns Returns the current state of the conversation.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../org/bukkit/conversations/Conversation.html#isLocalEchoEnabled()">isLocalEchoEnabled</a></strong>()</code>
+<td class="colLast"><code><strong><a href="Conversation.html#isLocalEchoEnabled()">isLocalEchoEnabled</a></strong>()</code>
 <div class="block">Gets the status of local echo for this conversation.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../org/bukkit/conversations/Conversation.html#isModal()">isModal</a></strong>()</code>
+<td class="colLast"><code><strong><a href="Conversation.html#isModal()">isModal</a></strong>()</code>
 <div class="block">Gets the modality of this conversation.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../org/bukkit/conversations/Conversation.html#outputNextPrompt()">outputNextPrompt</a></strong>()</code>
+<td class="colLast"><code><strong><a href="Conversation.html#outputNextPrompt()">outputNextPrompt</a></strong>()</code>
 <div class="block">Displays the next user prompt and abandons the conversation if the next
  prompt is null.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../org/bukkit/conversations/Conversation.html#removeConversationAbandonedListener(org.bukkit.conversations.ConversationAbandonedListener)">removeConversationAbandonedListener</a></strong>(<a href="../../../org/bukkit/conversations/ConversationAbandonedListener.html" title="interface in org.bukkit.conversations">ConversationAbandonedListener</a>&nbsp;listener)</code>
-<div class="block">Removes a <a href="../../../org/bukkit/conversations/ConversationAbandonedListener.html" title="interface in org.bukkit.conversations"><code>ConversationAbandonedListener</code></a>.</div>
+<td class="colLast"><code><strong><a href="Conversation.html#removeConversationAbandonedListener(org.bukkit.conversations.ConversationAbandonedListener)">removeConversationAbandonedListener</a></strong>(<a href="ConversationAbandonedListener.html" title="interface in org.bukkit.conversations">ConversationAbandonedListener</a>&nbsp;listener)</code>
+<div class="block">Removes a <a href="ConversationAbandonedListener.html" title="interface in org.bukkit.conversations"><code>ConversationAbandonedListener</code></a>.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../org/bukkit/conversations/Conversation.html#setLocalEchoEnabled(boolean)">setLocalEchoEnabled</a></strong>(boolean&nbsp;localEchoEnabled)</code>
+<td class="colLast"><code><strong><a href="Conversation.html#setLocalEchoEnabled(boolean)">setLocalEchoEnabled</a></strong>(boolean&nbsp;localEchoEnabled)</code>
 <div class="block">Sets the status of local echo for this conversation.</div>
 </td>
 </tr>
@@ -351,7 +351,7 @@ extends <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?
 <ul class="blockList">
 <li class="blockList">
 <h4>currentPrompt</h4>
-<pre>protected&nbsp;<a href="../../../org/bukkit/conversations/Prompt.html" title="interface in org.bukkit.conversations">Prompt</a> currentPrompt</pre>
+<pre>protected&nbsp;<a href="Prompt.html" title="interface in org.bukkit.conversations">Prompt</a> currentPrompt</pre>
 </li>
 </ul>
 <a name="context">
@@ -360,7 +360,7 @@ extends <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?
 <ul class="blockList">
 <li class="blockList">
 <h4>context</h4>
-<pre>protected&nbsp;<a href="../../../org/bukkit/conversations/ConversationContext.html" title="class in org.bukkit.conversations">ConversationContext</a> context</pre>
+<pre>protected&nbsp;<a href="ConversationContext.html" title="class in org.bukkit.conversations">ConversationContext</a> context</pre>
 </li>
 </ul>
 <a name="modal">
@@ -387,7 +387,7 @@ extends <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?
 <ul class="blockList">
 <li class="blockList">
 <h4>prefix</h4>
-<pre>protected&nbsp;<a href="../../../org/bukkit/conversations/ConversationPrefix.html" title="interface in org.bukkit.conversations">ConversationPrefix</a> prefix</pre>
+<pre>protected&nbsp;<a href="ConversationPrefix.html" title="interface in org.bukkit.conversations">ConversationPrefix</a> prefix</pre>
 </li>
 </ul>
 <a name="cancellers">
@@ -396,7 +396,7 @@ extends <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?
 <ul class="blockList">
 <li class="blockList">
 <h4>cancellers</h4>
-<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/bukkit/conversations/ConversationCanceller.html" title="interface in org.bukkit.conversations">ConversationCanceller</a>&gt; cancellers</pre>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="ConversationCanceller.html" title="interface in org.bukkit.conversations">ConversationCanceller</a>&gt; cancellers</pre>
 </li>
 </ul>
 <a name="abandonedListeners">
@@ -405,7 +405,7 @@ extends <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?
 <ul class="blockListLast">
 <li class="blockList">
 <h4>abandonedListeners</h4>
-<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/bukkit/conversations/ConversationAbandonedListener.html" title="interface in org.bukkit.conversations">ConversationAbandonedListener</a>&gt; abandonedListeners</pre>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="ConversationAbandonedListener.html" title="interface in org.bukkit.conversations">ConversationAbandonedListener</a>&gt; abandonedListeners</pre>
 </li>
 </ul>
 </li>
@@ -422,9 +422,9 @@ extends <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?
 <ul class="blockList">
 <li class="blockList">
 <h4>Conversation</h4>
-<pre>public&nbsp;Conversation(<a href="../../../org/bukkit/plugin/Plugin.html" title="interface in org.bukkit.plugin">Plugin</a>&nbsp;plugin,
-            <a href="../../../org/bukkit/conversations/Conversable.html" title="interface in org.bukkit.conversations">Conversable</a>&nbsp;forWhom,
-            <a href="../../../org/bukkit/conversations/Prompt.html" title="interface in org.bukkit.conversations">Prompt</a>&nbsp;firstPrompt)</pre>
+<pre>public&nbsp;Conversation(<a href="../plugin/Plugin.html" title="interface in org.bukkit.plugin">Plugin</a>&nbsp;plugin,
+            <a href="Conversable.html" title="interface in org.bukkit.conversations">Conversable</a>&nbsp;forWhom,
+            <a href="Prompt.html" title="interface in org.bukkit.conversations">Prompt</a>&nbsp;firstPrompt)</pre>
 <div class="block">Initializes a new Conversation.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>plugin</code> - The plugin that owns this conversation.</dd><dd><code>forWhom</code> - The entity for whom this conversation is mediating.</dd><dd><code>firstPrompt</code> - The first prompt in the conversation graph.</dd></dl>
 </li>
@@ -435,9 +435,9 @@ extends <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Conversation</h4>
-<pre>public&nbsp;Conversation(<a href="../../../org/bukkit/plugin/Plugin.html" title="interface in org.bukkit.plugin">Plugin</a>&nbsp;plugin,
-            <a href="../../../org/bukkit/conversations/Conversable.html" title="interface in org.bukkit.conversations">Conversable</a>&nbsp;forWhom,
-            <a href="../../../org/bukkit/conversations/Prompt.html" title="interface in org.bukkit.conversations">Prompt</a>&nbsp;firstPrompt,
+<pre>public&nbsp;Conversation(<a href="../plugin/Plugin.html" title="interface in org.bukkit.plugin">Plugin</a>&nbsp;plugin,
+            <a href="Conversable.html" title="interface in org.bukkit.conversations">Conversable</a>&nbsp;forWhom,
+            <a href="Prompt.html" title="interface in org.bukkit.conversations">Prompt</a>&nbsp;firstPrompt,
             <a href="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;initialSessionData)</pre>
 <div class="block">Initializes a new Conversation.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>plugin</code> - The plugin that owns this conversation.</dd><dd><code>forWhom</code> - The entity for whom this conversation is mediating.</dd><dd><code>firstPrompt</code> - The first prompt in the conversation graph.</dd><dd><code>initialSessionData</code> - Any initial values to put in the conversation
@@ -458,7 +458,7 @@ extends <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?
 <ul class="blockList">
 <li class="blockList">
 <h4>getForWhom</h4>
-<pre>public&nbsp;<a href="../../../org/bukkit/conversations/Conversable.html" title="interface in org.bukkit.conversations">Conversable</a>&nbsp;getForWhom()</pre>
+<pre>public&nbsp;<a href="Conversable.html" title="interface in org.bukkit.conversations">Conversable</a>&nbsp;getForWhom()</pre>
 <div class="block">Gets the entity for whom this conversation is mediating.</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>The entity.</dd></dl>
 </li>
@@ -508,8 +508,8 @@ extends <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?
 <ul class="blockList">
 <li class="blockList">
 <h4>getPrefix</h4>
-<pre>public&nbsp;<a href="../../../org/bukkit/conversations/ConversationPrefix.html" title="interface in org.bukkit.conversations">ConversationPrefix</a>&nbsp;getPrefix()</pre>
-<div class="block">Gets the <a href="../../../org/bukkit/conversations/ConversationPrefix.html" title="interface in org.bukkit.conversations"><code>ConversationPrefix</code></a> that prepends all output from this
+<pre>public&nbsp;<a href="ConversationPrefix.html" title="interface in org.bukkit.conversations">ConversationPrefix</a>&nbsp;getPrefix()</pre>
+<div class="block">Gets the <a href="ConversationPrefix.html" title="interface in org.bukkit.conversations"><code>ConversationPrefix</code></a> that prepends all output from this
  conversation.</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>The ConversationPrefix in use.</dd></dl>
 </li>
@@ -520,8 +520,8 @@ extends <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?
 <ul class="blockList">
 <li class="blockList">
 <h4>getCancellers</h4>
-<pre>public&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/bukkit/conversations/ConversationCanceller.html" title="interface in org.bukkit.conversations">ConversationCanceller</a>&gt;&nbsp;getCancellers()</pre>
-<div class="block">Gets the list of <a href="../../../org/bukkit/conversations/ConversationCanceller.html" title="interface in org.bukkit.conversations"><code>ConversationCanceller</code></a>s</div>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="ConversationCanceller.html" title="interface in org.bukkit.conversations">ConversationCanceller</a>&gt;&nbsp;getCancellers()</pre>
+<div class="block">Gets the list of <a href="ConversationCanceller.html" title="interface in org.bukkit.conversations"><code>ConversationCanceller</code></a>s</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>The list.</dd></dl>
 </li>
 </ul>
@@ -531,8 +531,8 @@ extends <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?
 <ul class="blockList">
 <li class="blockList">
 <h4>getContext</h4>
-<pre>public&nbsp;<a href="../../../org/bukkit/conversations/ConversationContext.html" title="class in org.bukkit.conversations">ConversationContext</a>&nbsp;getContext()</pre>
-<div class="block">Returns the Conversation's <a href="../../../org/bukkit/conversations/ConversationContext.html" title="class in org.bukkit.conversations"><code>ConversationContext</code></a>.</div>
+<pre>public&nbsp;<a href="ConversationContext.html" title="class in org.bukkit.conversations">ConversationContext</a>&nbsp;getContext()</pre>
+<div class="block">Returns the Conversation's <a href="ConversationContext.html" title="class in org.bukkit.conversations"><code>ConversationContext</code></a>.</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>The ConversationContext.</dd></dl>
 </li>
 </ul>
@@ -553,7 +553,7 @@ extends <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?
 <ul class="blockList">
 <li class="blockList">
 <h4>getState</h4>
-<pre>public&nbsp;<a href="../../../org/bukkit/conversations/Conversation.ConversationState.html" title="enum in org.bukkit.conversations">Conversation.ConversationState</a>&nbsp;getState()</pre>
+<pre>public&nbsp;<a href="Conversation.ConversationState.html" title="enum in org.bukkit.conversations">Conversation.ConversationState</a>&nbsp;getState()</pre>
 <div class="block">Returns Returns the current state of the conversation.</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>The current state of the conversation.</dd></dl>
 </li>
@@ -576,8 +576,8 @@ extends <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?
 <ul class="blockList">
 <li class="blockList">
 <h4>addConversationAbandonedListener</h4>
-<pre>public&nbsp;void&nbsp;addConversationAbandonedListener(<a href="../../../org/bukkit/conversations/ConversationAbandonedListener.html" title="interface in org.bukkit.conversations">ConversationAbandonedListener</a>&nbsp;listener)</pre>
-<div class="block">Adds a <a href="../../../org/bukkit/conversations/ConversationAbandonedListener.html" title="interface in org.bukkit.conversations"><code>ConversationAbandonedListener</code></a>.</div>
+<pre>public&nbsp;void&nbsp;addConversationAbandonedListener(<a href="ConversationAbandonedListener.html" title="interface in org.bukkit.conversations">ConversationAbandonedListener</a>&nbsp;listener)</pre>
+<div class="block">Adds a <a href="ConversationAbandonedListener.html" title="interface in org.bukkit.conversations"><code>ConversationAbandonedListener</code></a>.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>listener</code> - The listener to add.</dd></dl>
 </li>
 </ul>
@@ -587,8 +587,8 @@ extends <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?
 <ul class="blockList">
 <li class="blockList">
 <h4>removeConversationAbandonedListener</h4>
-<pre>public&nbsp;void&nbsp;removeConversationAbandonedListener(<a href="../../../org/bukkit/conversations/ConversationAbandonedListener.html" title="interface in org.bukkit.conversations">ConversationAbandonedListener</a>&nbsp;listener)</pre>
-<div class="block">Removes a <a href="../../../org/bukkit/conversations/ConversationAbandonedListener.html" title="interface in org.bukkit.conversations"><code>ConversationAbandonedListener</code></a>.</div>
+<pre>public&nbsp;void&nbsp;removeConversationAbandonedListener(<a href="ConversationAbandonedListener.html" title="interface in org.bukkit.conversations">ConversationAbandonedListener</a>&nbsp;listener)</pre>
+<div class="block">Removes a <a href="ConversationAbandonedListener.html" title="interface in org.bukkit.conversations"><code>ConversationAbandonedListener</code></a>.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>listener</code> - The listener to remove.</dd></dl>
 </li>
 </ul>
@@ -609,7 +609,7 @@ extends <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?
 <ul class="blockList">
 <li class="blockList">
 <h4>abandon</h4>
-<pre>public&nbsp;void&nbsp;abandon(<a href="../../../org/bukkit/conversations/ConversationAbandonedEvent.html" title="class in org.bukkit.conversations">ConversationAbandonedEvent</a>&nbsp;details)</pre>
+<pre>public&nbsp;void&nbsp;abandon(<a href="ConversationAbandonedEvent.html" title="class in org.bukkit.conversations">ConversationAbandonedEvent</a>&nbsp;details)</pre>
 <div class="block">Abandons and resets the current conversation. Restores the user's
  normal chat behavior.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>details</code> - Details about why the conversation was abandoned</dd></dl>
@@ -636,7 +636,7 @@ extends <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?
 <!-- ======= START OF BOTTOM NAVBAR ====== -->
 <div class="bottomNav"><a name="navbar_bottom">
 <!--   -->
-</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+</a><a href="Conversation.html#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
@@ -652,11 +652,11 @@ extends <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../org/bukkit/conversations/Conversable.html" title="interface in org.bukkit.conversations"><span class="strong">Prev Class</span></a></li>
-<li><a href="../../../org/bukkit/conversations/Conversation.ConversationState.html" title="enum in org.bukkit.conversations"><span class="strong">Next Class</span></a></li>
+<li><a href="Conversable.html" title="interface in org.bukkit.conversations"><span class="strong">Prev Class</span></a></li>
+<li><a href="Conversation.ConversationState.html" title="enum in org.bukkit.conversations"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
-<li><a href="../../../index.html?org/bukkit/conversations/Conversation.html" target="_top">Frames</a></li>
+<li><a href="../../../index.html%3Forg%252Fbukkit%252Fconversations%252FConversation.html" target="_top">Frames</a></li>
 <li><a href="Conversation.html" target="_top">No Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_bottom">
@@ -677,16 +677,16 @@ extends <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
-<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
-<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_summary">Method</a></li>
+<li><a href="Conversation.html#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="Conversation.html#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="Conversation.html#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="Conversation.html#method_summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
-<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_detail">Method</a></li>
+<li><a href="Conversation.html#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="Conversation.html#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="Conversation.html#method_detail">Method</a></li>
 </ul>
 </div>
 <a name="skip-navbar_bottom">

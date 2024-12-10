@@ -28,7 +28,7 @@ function windowTitle()
 
 <!-- ========= START OF TOP NAVBAR ======= -->
 <A NAME="navbar_top"><!-- --></A>
-<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<A HREF="Conversation.html#skip-navbar_top" title="Skip navigation links"></A>
 <TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
 <TR>
 <TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
@@ -53,10 +53,10 @@ function windowTitle()
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../org/bukkit/conversations/Conversable.html" title="interface in org.bukkit.conversations"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../org/bukkit/conversations/Conversation.ConversationState.html" title="enum in org.bukkit.conversations"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="Conversable.html" title="interface in org.bukkit.conversations"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="Conversation.ConversationState.html" title="enum in org.bukkit.conversations"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-  <A HREF="../../../index.html?org/bukkit/conversations/Conversation.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+  <A HREF="../../../index.html%3Forg%252Fbukkit%252Fconversations%252FConversation.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="Conversation.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
 &nbsp;<SCRIPT type="text/javascript">
   <!--
@@ -74,9 +74,9 @@ function windowTitle()
 </TR>
 <TR>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;<A HREF="#nested_class_summary">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+  SUMMARY:&nbsp;<A HREF="Conversation.html#nested_class_summary">NESTED</A>&nbsp;|&nbsp;<A HREF="Conversation.html#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="Conversation.html#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="Conversation.html#method_summary">METHOD</A></FONT></TD>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+DETAIL:&nbsp;<A HREF="Conversation.html#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="Conversation.html#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="Conversation.html#method_detail">METHOD</A></FONT></TD>
 </TR>
 </TABLE>
 <A NAME="skip-navbar_top"></A>
@@ -101,20 +101,20 @@ Class Conversation</H2>
 <P>
 The Conversation class is responsible for tracking the current state of a conversation, displaying prompts to
  the user, and dispatching the user's response to the appropriate place. Conversation objects are not typically
- instantiated directly. Instead a <A HREF="../../../org/bukkit/conversations/ConversationFactory.html" title="class in org.bukkit.conversations"><CODE>ConversationFactory</CODE></A> is used to construct identical conversations on demand.
+ instantiated directly. Instead a <A HREF="ConversationFactory.html" title="class in org.bukkit.conversations"><CODE>ConversationFactory</CODE></A> is used to construct identical conversations on demand.
 
- Conversation flow consists of a directed graph of <A HREF="../../../org/bukkit/conversations/Prompt.html" title="interface in org.bukkit.conversations"><CODE>Prompt</CODE></A> objects. Each time a prompt gets input from the
+ Conversation flow consists of a directed graph of <A HREF="Prompt.html" title="interface in org.bukkit.conversations"><CODE>Prompt</CODE></A> objects. Each time a prompt gets input from the
  user, it must return the next prompt in the graph. Since each Prompt chooses the next Prompt, complex conversation
  trees can be implemented where the nature of the player's response directs the flow of the conversation.
 
- Each conversation has a <A HREF="../../../org/bukkit/conversations/ConversationPrefix.html" title="interface in org.bukkit.conversations"><CODE>ConversationPrefix</CODE></A> that prepends all output from the conversation to the player.
+ Each conversation has a <A HREF="ConversationPrefix.html" title="interface in org.bukkit.conversations"><CODE>ConversationPrefix</CODE></A> that prepends all output from the conversation to the player.
  The ConversationPrefix can be used to display the plugin name or conversation status as the conversation evolves.
 
  Each conversation has a timeout measured in the number of inactive seconds to wait before abandoning the conversation.
  If the inactivity timeout is reached, the conversation is abandoned and the user's incoming and outgoing chat is
  returned to normal.
 
- You should not construct a conversation manually. Instead, use the <A HREF="../../../org/bukkit/conversations/ConversationFactory.html" title="class in org.bukkit.conversations"><CODE>ConversationFactory</CODE></A> for access to all
+ You should not construct a conversation manually. Instead, use the <A HREF="ConversationFactory.html" title="class in org.bukkit.conversations"><CODE>ConversationFactory</CODE></A> for access to all
  available options.
 <P>
 
@@ -133,7 +133,7 @@ The Conversation class is responsible for tracking the current state of a conver
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>static&nbsp;class</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../org/bukkit/conversations/Conversation.ConversationState.html" title="enum in org.bukkit.conversations">Conversation.ConversationState</A></B></CODE>
+<TD><CODE><B><A HREF="Conversation.ConversationState.html" title="enum in org.bukkit.conversations">Conversation.ConversationState</A></B></CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -149,40 +149,32 @@ The Conversation class is responsible for tracking the current state of a conver
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/List.html" title="class or interface in java.util">List</A>&lt;<A HREF="../../../org/bukkit/conversations/ConversationAbandonedListener.html" title="interface in org.bukkit.conversations">ConversationAbandonedListener</A>&gt;</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../org/bukkit/conversations/Conversation.html#abandonedListeners">abandonedListeners</A></B></CODE>
+<CODE>protected &nbsp;<A HREF="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/List.html" title="class or interface in java.util">List</A>&lt;<A HREF="ConversationAbandonedListener.html" title="interface in org.bukkit.conversations">ConversationAbandonedListener</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="Conversation.html#abandonedListeners">abandonedListeners</A></B></CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/List.html" title="class or interface in java.util">List</A>&lt;<A HREF="../../../org/bukkit/conversations/ConversationCanceller.html" title="interface in org.bukkit.conversations">ConversationCanceller</A>&gt;</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../org/bukkit/conversations/Conversation.html#cancellers">cancellers</A></B></CODE>
+<CODE>protected &nbsp;<A HREF="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/List.html" title="class or interface in java.util">List</A>&lt;<A HREF="ConversationCanceller.html" title="interface in org.bukkit.conversations">ConversationCanceller</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="Conversation.html#cancellers">cancellers</A></B></CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="../../../org/bukkit/conversations/ConversationContext.html" title="class in org.bukkit.conversations">ConversationContext</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../org/bukkit/conversations/Conversation.html#context">context</A></B></CODE>
+<CODE>protected &nbsp;<A HREF="ConversationContext.html" title="class in org.bukkit.conversations">ConversationContext</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="Conversation.html#context">context</A></B></CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="../../../org/bukkit/conversations/Prompt.html" title="interface in org.bukkit.conversations">Prompt</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../org/bukkit/conversations/Conversation.html#currentPrompt">currentPrompt</A></B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;boolean</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../org/bukkit/conversations/Conversation.html#localEchoEnabled">localEchoEnabled</A></B></CODE>
+<CODE>protected &nbsp;<A HREF="Prompt.html" title="interface in org.bukkit.conversations">Prompt</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="Conversation.html#currentPrompt">currentPrompt</A></B></CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -190,15 +182,23 @@ The Conversation class is responsible for tracking the current state of a conver
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>protected &nbsp;boolean</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../org/bukkit/conversations/Conversation.html#modal">modal</A></B></CODE>
+<TD><CODE><B><A HREF="Conversation.html#localEchoEnabled">localEchoEnabled</A></B></CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="../../../org/bukkit/conversations/ConversationPrefix.html" title="interface in org.bukkit.conversations">ConversationPrefix</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../org/bukkit/conversations/Conversation.html#prefix">prefix</A></B></CODE>
+<CODE>protected &nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="Conversation.html#modal">modal</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="ConversationPrefix.html" title="interface in org.bukkit.conversations">ConversationPrefix</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="Conversation.html#prefix">prefix</A></B></CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -214,17 +214,17 @@ The Conversation class is responsible for tracking the current state of a conver
 <B>Constructor Summary</B></FONT></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../org/bukkit/conversations/Conversation.html#Conversation(org.bukkit.plugin.Plugin, org.bukkit.conversations.Conversable, org.bukkit.conversations.Prompt)">Conversation</A></B>(<A HREF="../../../org/bukkit/plugin/Plugin.html" title="interface in org.bukkit.plugin">Plugin</A>&nbsp;plugin,
-             <A HREF="../../../org/bukkit/conversations/Conversable.html" title="interface in org.bukkit.conversations">Conversable</A>&nbsp;forWhom,
-             <A HREF="../../../org/bukkit/conversations/Prompt.html" title="interface in org.bukkit.conversations">Prompt</A>&nbsp;firstPrompt)</CODE>
+<TD><CODE><B><A HREF="Conversation.html#Conversation(org.bukkit.plugin.Plugin, org.bukkit.conversations.Conversable, org.bukkit.conversations.Prompt)">Conversation</A></B>(<A HREF="../plugin/Plugin.html" title="interface in org.bukkit.plugin">Plugin</A>&nbsp;plugin,
+             <A HREF="Conversable.html" title="interface in org.bukkit.conversations">Conversable</A>&nbsp;forWhom,
+             <A HREF="Prompt.html" title="interface in org.bukkit.conversations">Prompt</A>&nbsp;firstPrompt)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initializes a new Conversation.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../org/bukkit/conversations/Conversation.html#Conversation(org.bukkit.plugin.Plugin, org.bukkit.conversations.Conversable, org.bukkit.conversations.Prompt, java.util.Map)">Conversation</A></B>(<A HREF="../../../org/bukkit/plugin/Plugin.html" title="interface in org.bukkit.plugin">Plugin</A>&nbsp;plugin,
-             <A HREF="../../../org/bukkit/conversations/Conversable.html" title="interface in org.bukkit.conversations">Conversable</A>&nbsp;forWhom,
-             <A HREF="../../../org/bukkit/conversations/Prompt.html" title="interface in org.bukkit.conversations">Prompt</A>&nbsp;firstPrompt,
+<TD><CODE><B><A HREF="Conversation.html#Conversation(org.bukkit.plugin.Plugin, org.bukkit.conversations.Conversable, org.bukkit.conversations.Prompt, java.util.Map)">Conversation</A></B>(<A HREF="../plugin/Plugin.html" title="interface in org.bukkit.plugin">Plugin</A>&nbsp;plugin,
+             <A HREF="Conversable.html" title="interface in org.bukkit.conversations">Conversable</A>&nbsp;forWhom,
+             <A HREF="Prompt.html" title="interface in org.bukkit.conversations">Prompt</A>&nbsp;firstPrompt,
              <A HREF="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/Map.html" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html" title="class or interface in java.lang">Object</A>,<A HREF="http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html" title="class or interface in java.lang">Object</A>&gt;&nbsp;initialSessionData)</CODE>
 
 <BR>
@@ -243,7 +243,7 @@ The Conversation class is responsible for tracking the current state of a conver
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../org/bukkit/conversations/Conversation.html#abandon()">abandon</A></B>()</CODE>
+<TD><CODE><B><A HREF="Conversation.html#abandon()">abandon</A></B>()</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Abandons and resets the current conversation.</TD>
@@ -251,7 +251,7 @@ The Conversation class is responsible for tracking the current state of a conver
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../org/bukkit/conversations/Conversation.html#abandon(org.bukkit.conversations.ConversationAbandonedEvent)">abandon</A></B>(<A HREF="../../../org/bukkit/conversations/ConversationAbandonedEvent.html" title="class in org.bukkit.conversations">ConversationAbandonedEvent</A>&nbsp;details)</CODE>
+<TD><CODE><B><A HREF="Conversation.html#abandon(org.bukkit.conversations.ConversationAbandonedEvent)">abandon</A></B>(<A HREF="ConversationAbandonedEvent.html" title="class in org.bukkit.conversations">ConversationAbandonedEvent</A>&nbsp;details)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Abandons and resets the current conversation.</TD>
@@ -259,7 +259,7 @@ The Conversation class is responsible for tracking the current state of a conver
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../org/bukkit/conversations/Conversation.html#acceptInput(java.lang.String)">acceptInput</A></B>(<A HREF="http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/String.html" title="class or interface in java.lang">String</A>&nbsp;input)</CODE>
+<TD><CODE><B><A HREF="Conversation.html#acceptInput(java.lang.String)">acceptInput</A></B>(<A HREF="http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/String.html" title="class or interface in java.lang">String</A>&nbsp;input)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Passes player input into the current prompt.</TD>
@@ -267,55 +267,55 @@ The Conversation class is responsible for tracking the current state of a conver
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../org/bukkit/conversations/Conversation.html#addConversationAbandonedListener(org.bukkit.conversations.ConversationAbandonedListener)">addConversationAbandonedListener</A></B>(<A HREF="../../../org/bukkit/conversations/ConversationAbandonedListener.html" title="interface in org.bukkit.conversations">ConversationAbandonedListener</A>&nbsp;listener)</CODE>
+<TD><CODE><B><A HREF="Conversation.html#addConversationAbandonedListener(org.bukkit.conversations.ConversationAbandonedListener)">addConversationAbandonedListener</A></B>(<A HREF="ConversationAbandonedListener.html" title="interface in org.bukkit.conversations">ConversationAbandonedListener</A>&nbsp;listener)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adds a <A HREF="../../../org/bukkit/conversations/ConversationAbandonedListener.html" title="interface in org.bukkit.conversations"><CODE>ConversationAbandonedListener</CODE></A>.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adds a <A HREF="ConversationAbandonedListener.html" title="interface in org.bukkit.conversations"><CODE>ConversationAbandonedListener</CODE></A>.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../org/bukkit/conversations/Conversation.html#begin()">begin</A></B>()</CODE>
+<TD><CODE><B><A HREF="Conversation.html#begin()">begin</A></B>()</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Displays the first prompt of this conversation and begins redirecting the user's chat responses.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/List.html" title="class or interface in java.util">List</A>&lt;<A HREF="../../../org/bukkit/conversations/ConversationCanceller.html" title="interface in org.bukkit.conversations">ConversationCanceller</A>&gt;</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../org/bukkit/conversations/Conversation.html#getCancellers()">getCancellers</A></B>()</CODE>
+<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/List.html" title="class or interface in java.util">List</A>&lt;<A HREF="ConversationCanceller.html" title="interface in org.bukkit.conversations">ConversationCanceller</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="Conversation.html#getCancellers()">getCancellers</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gets the list of <A HREF="../../../org/bukkit/conversations/ConversationCanceller.html" title="interface in org.bukkit.conversations"><CODE>ConversationCanceller</CODE></A>s</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gets the list of <A HREF="ConversationCanceller.html" title="interface in org.bukkit.conversations"><CODE>ConversationCanceller</CODE></A>s</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="../../../org/bukkit/conversations/ConversationContext.html" title="class in org.bukkit.conversations">ConversationContext</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../org/bukkit/conversations/Conversation.html#getContext()">getContext</A></B>()</CODE>
+<CODE>&nbsp;<A HREF="ConversationContext.html" title="class in org.bukkit.conversations">ConversationContext</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="Conversation.html#getContext()">getContext</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the Conversation's <A HREF="../../../org/bukkit/conversations/ConversationContext.html" title="class in org.bukkit.conversations"><CODE>ConversationContext</CODE></A>.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the Conversation's <A HREF="ConversationContext.html" title="class in org.bukkit.conversations"><CODE>ConversationContext</CODE></A>.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="../../../org/bukkit/conversations/Conversable.html" title="interface in org.bukkit.conversations">Conversable</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../org/bukkit/conversations/Conversation.html#getForWhom()">getForWhom</A></B>()</CODE>
+<CODE>&nbsp;<A HREF="Conversable.html" title="interface in org.bukkit.conversations">Conversable</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="Conversation.html#getForWhom()">getForWhom</A></B>()</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gets the entity for whom this conversation is mediating.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="../../../org/bukkit/conversations/ConversationPrefix.html" title="interface in org.bukkit.conversations">ConversationPrefix</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../org/bukkit/conversations/Conversation.html#getPrefix()">getPrefix</A></B>()</CODE>
+<CODE>&nbsp;<A HREF="ConversationPrefix.html" title="interface in org.bukkit.conversations">ConversationPrefix</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="Conversation.html#getPrefix()">getPrefix</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gets the <A HREF="../../../org/bukkit/conversations/ConversationPrefix.html" title="interface in org.bukkit.conversations"><CODE>ConversationPrefix</CODE></A> that prepends all output from this conversation.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gets the <A HREF="ConversationPrefix.html" title="interface in org.bukkit.conversations"><CODE>ConversationPrefix</CODE></A> that prepends all output from this conversation.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="../../../org/bukkit/conversations/Conversation.ConversationState.html" title="enum in org.bukkit.conversations">Conversation.ConversationState</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../org/bukkit/conversations/Conversation.html#getState()">getState</A></B>()</CODE>
+<CODE>&nbsp;<A HREF="Conversation.ConversationState.html" title="enum in org.bukkit.conversations">Conversation.ConversationState</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="Conversation.html#getState()">getState</A></B>()</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns Returns the current state of the conversation.</TD>
@@ -323,7 +323,7 @@ The Conversation class is responsible for tracking the current state of a conver
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;boolean</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../org/bukkit/conversations/Conversation.html#isLocalEchoEnabled()">isLocalEchoEnabled</A></B>()</CODE>
+<TD><CODE><B><A HREF="Conversation.html#isLocalEchoEnabled()">isLocalEchoEnabled</A></B>()</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gets the status of local echo for this conversation.</TD>
@@ -331,7 +331,7 @@ The Conversation class is responsible for tracking the current state of a conver
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;boolean</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../org/bukkit/conversations/Conversation.html#isModal()">isModal</A></B>()</CODE>
+<TD><CODE><B><A HREF="Conversation.html#isModal()">isModal</A></B>()</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gets the modality of this conversation.</TD>
@@ -339,7 +339,7 @@ The Conversation class is responsible for tracking the current state of a conver
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../org/bukkit/conversations/Conversation.html#outputNextPrompt()">outputNextPrompt</A></B>()</CODE>
+<TD><CODE><B><A HREF="Conversation.html#outputNextPrompt()">outputNextPrompt</A></B>()</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Displays the next user prompt and abandons the conversation if the next prompt is null.</TD>
@@ -347,15 +347,15 @@ The Conversation class is responsible for tracking the current state of a conver
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../org/bukkit/conversations/Conversation.html#removeConversationAbandonedListener(org.bukkit.conversations.ConversationAbandonedListener)">removeConversationAbandonedListener</A></B>(<A HREF="../../../org/bukkit/conversations/ConversationAbandonedListener.html" title="interface in org.bukkit.conversations">ConversationAbandonedListener</A>&nbsp;listener)</CODE>
+<TD><CODE><B><A HREF="Conversation.html#removeConversationAbandonedListener(org.bukkit.conversations.ConversationAbandonedListener)">removeConversationAbandonedListener</A></B>(<A HREF="ConversationAbandonedListener.html" title="interface in org.bukkit.conversations">ConversationAbandonedListener</A>&nbsp;listener)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Removes a <A HREF="../../../org/bukkit/conversations/ConversationAbandonedListener.html" title="interface in org.bukkit.conversations"><CODE>ConversationAbandonedListener</CODE></A>.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Removes a <A HREF="ConversationAbandonedListener.html" title="interface in org.bukkit.conversations"><CODE>ConversationAbandonedListener</CODE></A>.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../org/bukkit/conversations/Conversation.html#setLocalEchoEnabled(boolean)">setLocalEchoEnabled</A></B>(boolean&nbsp;localEchoEnabled)</CODE>
+<TD><CODE><B><A HREF="Conversation.html#setLocalEchoEnabled(boolean)">setLocalEchoEnabled</A></B>(boolean&nbsp;localEchoEnabled)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the status of local echo for this conversation.</TD>
@@ -386,7 +386,7 @@ The Conversation class is responsible for tracking the current state of a conver
 <A NAME="currentPrompt"><!-- --></A><H3>
 currentPrompt</H3>
 <PRE>
-protected <A HREF="../../../org/bukkit/conversations/Prompt.html" title="interface in org.bukkit.conversations">Prompt</A> <B>currentPrompt</B></PRE>
+protected <A HREF="Prompt.html" title="interface in org.bukkit.conversations">Prompt</A> <B>currentPrompt</B></PRE>
 <DL>
 <DL>
 </DL>
@@ -396,7 +396,7 @@ protected <A HREF="../../../org/bukkit/conversations/Prompt.html" title="interfa
 <A NAME="context"><!-- --></A><H3>
 context</H3>
 <PRE>
-protected <A HREF="../../../org/bukkit/conversations/ConversationContext.html" title="class in org.bukkit.conversations">ConversationContext</A> <B>context</B></PRE>
+protected <A HREF="ConversationContext.html" title="class in org.bukkit.conversations">ConversationContext</A> <B>context</B></PRE>
 <DL>
 <DL>
 </DL>
@@ -426,7 +426,7 @@ protected boolean <B>localEchoEnabled</B></PRE>
 <A NAME="prefix"><!-- --></A><H3>
 prefix</H3>
 <PRE>
-protected <A HREF="../../../org/bukkit/conversations/ConversationPrefix.html" title="interface in org.bukkit.conversations">ConversationPrefix</A> <B>prefix</B></PRE>
+protected <A HREF="ConversationPrefix.html" title="interface in org.bukkit.conversations">ConversationPrefix</A> <B>prefix</B></PRE>
 <DL>
 <DL>
 </DL>
@@ -436,7 +436,7 @@ protected <A HREF="../../../org/bukkit/conversations/ConversationPrefix.html" ti
 <A NAME="cancellers"><!-- --></A><H3>
 cancellers</H3>
 <PRE>
-protected <A HREF="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/List.html" title="class or interface in java.util">List</A>&lt;<A HREF="../../../org/bukkit/conversations/ConversationCanceller.html" title="interface in org.bukkit.conversations">ConversationCanceller</A>&gt; <B>cancellers</B></PRE>
+protected <A HREF="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/List.html" title="class or interface in java.util">List</A>&lt;<A HREF="ConversationCanceller.html" title="interface in org.bukkit.conversations">ConversationCanceller</A>&gt; <B>cancellers</B></PRE>
 <DL>
 <DL>
 </DL>
@@ -446,7 +446,7 @@ protected <A HREF="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/List.h
 <A NAME="abandonedListeners"><!-- --></A><H3>
 abandonedListeners</H3>
 <PRE>
-protected <A HREF="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/List.html" title="class or interface in java.util">List</A>&lt;<A HREF="../../../org/bukkit/conversations/ConversationAbandonedListener.html" title="interface in org.bukkit.conversations">ConversationAbandonedListener</A>&gt; <B>abandonedListeners</B></PRE>
+protected <A HREF="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/List.html" title="class or interface in java.util">List</A>&lt;<A HREF="ConversationAbandonedListener.html" title="interface in org.bukkit.conversations">ConversationAbandonedListener</A>&gt; <B>abandonedListeners</B></PRE>
 <DL>
 <DL>
 </DL>
@@ -465,9 +465,9 @@ protected <A HREF="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/List.h
 <A NAME="Conversation(org.bukkit.plugin.Plugin, org.bukkit.conversations.Conversable, org.bukkit.conversations.Prompt)"><!-- --></A><H3>
 Conversation</H3>
 <PRE>
-public <B>Conversation</B>(<A HREF="../../../org/bukkit/plugin/Plugin.html" title="interface in org.bukkit.plugin">Plugin</A>&nbsp;plugin,
-                    <A HREF="../../../org/bukkit/conversations/Conversable.html" title="interface in org.bukkit.conversations">Conversable</A>&nbsp;forWhom,
-                    <A HREF="../../../org/bukkit/conversations/Prompt.html" title="interface in org.bukkit.conversations">Prompt</A>&nbsp;firstPrompt)</PRE>
+public <B>Conversation</B>(<A HREF="../plugin/Plugin.html" title="interface in org.bukkit.plugin">Plugin</A>&nbsp;plugin,
+                    <A HREF="Conversable.html" title="interface in org.bukkit.conversations">Conversable</A>&nbsp;forWhom,
+                    <A HREF="Prompt.html" title="interface in org.bukkit.conversations">Prompt</A>&nbsp;firstPrompt)</PRE>
 <DL>
 <DD>Initializes a new Conversation.
 <P>
@@ -479,9 +479,9 @@ public <B>Conversation</B>(<A HREF="../../../org/bukkit/plugin/Plugin.html" titl
 <A NAME="Conversation(org.bukkit.plugin.Plugin, org.bukkit.conversations.Conversable, org.bukkit.conversations.Prompt, java.util.Map)"><!-- --></A><H3>
 Conversation</H3>
 <PRE>
-public <B>Conversation</B>(<A HREF="../../../org/bukkit/plugin/Plugin.html" title="interface in org.bukkit.plugin">Plugin</A>&nbsp;plugin,
-                    <A HREF="../../../org/bukkit/conversations/Conversable.html" title="interface in org.bukkit.conversations">Conversable</A>&nbsp;forWhom,
-                    <A HREF="../../../org/bukkit/conversations/Prompt.html" title="interface in org.bukkit.conversations">Prompt</A>&nbsp;firstPrompt,
+public <B>Conversation</B>(<A HREF="../plugin/Plugin.html" title="interface in org.bukkit.plugin">Plugin</A>&nbsp;plugin,
+                    <A HREF="Conversable.html" title="interface in org.bukkit.conversations">Conversable</A>&nbsp;forWhom,
+                    <A HREF="Prompt.html" title="interface in org.bukkit.conversations">Prompt</A>&nbsp;firstPrompt,
                     <A HREF="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/Map.html" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html" title="class or interface in java.lang">Object</A>,<A HREF="http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/Object.html" title="class or interface in java.lang">Object</A>&gt;&nbsp;initialSessionData)</PRE>
 <DL>
 <DD>Initializes a new Conversation.
@@ -503,7 +503,7 @@ public <B>Conversation</B>(<A HREF="../../../org/bukkit/plugin/Plugin.html" titl
 <A NAME="getForWhom()"><!-- --></A><H3>
 getForWhom</H3>
 <PRE>
-public <A HREF="../../../org/bukkit/conversations/Conversable.html" title="interface in org.bukkit.conversations">Conversable</A> <B>getForWhom</B>()</PRE>
+public <A HREF="Conversable.html" title="interface in org.bukkit.conversations">Conversable</A> <B>getForWhom</B>()</PRE>
 <DL>
 <DD>Gets the entity for whom this conversation is mediating.
 <P>
@@ -561,9 +561,9 @@ public void <B>setLocalEchoEnabled</B>(boolean&nbsp;localEchoEnabled)</PRE>
 <A NAME="getPrefix()"><!-- --></A><H3>
 getPrefix</H3>
 <PRE>
-public <A HREF="../../../org/bukkit/conversations/ConversationPrefix.html" title="interface in org.bukkit.conversations">ConversationPrefix</A> <B>getPrefix</B>()</PRE>
+public <A HREF="ConversationPrefix.html" title="interface in org.bukkit.conversations">ConversationPrefix</A> <B>getPrefix</B>()</PRE>
 <DL>
-<DD>Gets the <A HREF="../../../org/bukkit/conversations/ConversationPrefix.html" title="interface in org.bukkit.conversations"><CODE>ConversationPrefix</CODE></A> that prepends all output from this conversation.
+<DD>Gets the <A HREF="ConversationPrefix.html" title="interface in org.bukkit.conversations"><CODE>ConversationPrefix</CODE></A> that prepends all output from this conversation.
 <P>
 <DD><DL>
 
@@ -575,9 +575,9 @@ public <A HREF="../../../org/bukkit/conversations/ConversationPrefix.html" title
 <A NAME="getCancellers()"><!-- --></A><H3>
 getCancellers</H3>
 <PRE>
-public <A HREF="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/List.html" title="class or interface in java.util">List</A>&lt;<A HREF="../../../org/bukkit/conversations/ConversationCanceller.html" title="interface in org.bukkit.conversations">ConversationCanceller</A>&gt; <B>getCancellers</B>()</PRE>
+public <A HREF="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/List.html" title="class or interface in java.util">List</A>&lt;<A HREF="ConversationCanceller.html" title="interface in org.bukkit.conversations">ConversationCanceller</A>&gt; <B>getCancellers</B>()</PRE>
 <DL>
-<DD>Gets the list of <A HREF="../../../org/bukkit/conversations/ConversationCanceller.html" title="interface in org.bukkit.conversations"><CODE>ConversationCanceller</CODE></A>s
+<DD>Gets the list of <A HREF="ConversationCanceller.html" title="interface in org.bukkit.conversations"><CODE>ConversationCanceller</CODE></A>s
 <P>
 <DD><DL>
 
@@ -589,9 +589,9 @@ public <A HREF="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/List.html
 <A NAME="getContext()"><!-- --></A><H3>
 getContext</H3>
 <PRE>
-public <A HREF="../../../org/bukkit/conversations/ConversationContext.html" title="class in org.bukkit.conversations">ConversationContext</A> <B>getContext</B>()</PRE>
+public <A HREF="ConversationContext.html" title="class in org.bukkit.conversations">ConversationContext</A> <B>getContext</B>()</PRE>
 <DL>
-<DD>Returns the Conversation's <A HREF="../../../org/bukkit/conversations/ConversationContext.html" title="class in org.bukkit.conversations"><CODE>ConversationContext</CODE></A>.
+<DD>Returns the Conversation's <A HREF="ConversationContext.html" title="class in org.bukkit.conversations"><CODE>ConversationContext</CODE></A>.
 <P>
 <DD><DL>
 
@@ -616,7 +616,7 @@ public void <B>begin</B>()</PRE>
 <A NAME="getState()"><!-- --></A><H3>
 getState</H3>
 <PRE>
-public <A HREF="../../../org/bukkit/conversations/Conversation.ConversationState.html" title="enum in org.bukkit.conversations">Conversation.ConversationState</A> <B>getState</B>()</PRE>
+public <A HREF="Conversation.ConversationState.html" title="enum in org.bukkit.conversations">Conversation.ConversationState</A> <B>getState</B>()</PRE>
 <DL>
 <DD>Returns Returns the current state of the conversation.
 <P>
@@ -644,9 +644,9 @@ public void <B>acceptInput</B>(<A HREF="http://docs.oracle.com/javase/1.5.0/docs
 <A NAME="addConversationAbandonedListener(org.bukkit.conversations.ConversationAbandonedListener)"><!-- --></A><H3>
 addConversationAbandonedListener</H3>
 <PRE>
-public void <B>addConversationAbandonedListener</B>(<A HREF="../../../org/bukkit/conversations/ConversationAbandonedListener.html" title="interface in org.bukkit.conversations">ConversationAbandonedListener</A>&nbsp;listener)</PRE>
+public void <B>addConversationAbandonedListener</B>(<A HREF="ConversationAbandonedListener.html" title="interface in org.bukkit.conversations">ConversationAbandonedListener</A>&nbsp;listener)</PRE>
 <DL>
-<DD>Adds a <A HREF="../../../org/bukkit/conversations/ConversationAbandonedListener.html" title="interface in org.bukkit.conversations"><CODE>ConversationAbandonedListener</CODE></A>.
+<DD>Adds a <A HREF="ConversationAbandonedListener.html" title="interface in org.bukkit.conversations"><CODE>ConversationAbandonedListener</CODE></A>.
 <P>
 <DD><DL>
 <DT><B>Parameters:</B><DD><CODE>listener</CODE> - The listener to add.</DL>
@@ -657,9 +657,9 @@ public void <B>addConversationAbandonedListener</B>(<A HREF="../../../org/bukkit
 <A NAME="removeConversationAbandonedListener(org.bukkit.conversations.ConversationAbandonedListener)"><!-- --></A><H3>
 removeConversationAbandonedListener</H3>
 <PRE>
-public void <B>removeConversationAbandonedListener</B>(<A HREF="../../../org/bukkit/conversations/ConversationAbandonedListener.html" title="interface in org.bukkit.conversations">ConversationAbandonedListener</A>&nbsp;listener)</PRE>
+public void <B>removeConversationAbandonedListener</B>(<A HREF="ConversationAbandonedListener.html" title="interface in org.bukkit.conversations">ConversationAbandonedListener</A>&nbsp;listener)</PRE>
 <DL>
-<DD>Removes a <A HREF="../../../org/bukkit/conversations/ConversationAbandonedListener.html" title="interface in org.bukkit.conversations"><CODE>ConversationAbandonedListener</CODE></A>.
+<DD>Removes a <A HREF="ConversationAbandonedListener.html" title="interface in org.bukkit.conversations"><CODE>ConversationAbandonedListener</CODE></A>.
 <P>
 <DD><DL>
 <DT><B>Parameters:</B><DD><CODE>listener</CODE> - The listener to remove.</DL>
@@ -683,7 +683,7 @@ public void <B>abandon</B>()</PRE>
 <A NAME="abandon(org.bukkit.conversations.ConversationAbandonedEvent)"><!-- --></A><H3>
 abandon</H3>
 <PRE>
-public void <B>abandon</B>(<A HREF="../../../org/bukkit/conversations/ConversationAbandonedEvent.html" title="class in org.bukkit.conversations">ConversationAbandonedEvent</A>&nbsp;details)</PRE>
+public void <B>abandon</B>(<A HREF="ConversationAbandonedEvent.html" title="class in org.bukkit.conversations">ConversationAbandonedEvent</A>&nbsp;details)</PRE>
 <DL>
 <DD>Abandons and resets the current conversation. Restores the user's normal chat behavior.
 <P>
@@ -710,7 +710,7 @@ public void <B>outputNextPrompt</B>()</PRE>
 
 <!-- ======= START OF BOTTOM NAVBAR ====== -->
 <A NAME="navbar_bottom"><!-- --></A>
-<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<A HREF="Conversation.html#skip-navbar_bottom" title="Skip navigation links"></A>
 <TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
 <TR>
 <TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
@@ -735,10 +735,10 @@ public void <B>outputNextPrompt</B>()</PRE>
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../org/bukkit/conversations/Conversable.html" title="interface in org.bukkit.conversations"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../org/bukkit/conversations/Conversation.ConversationState.html" title="enum in org.bukkit.conversations"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="Conversable.html" title="interface in org.bukkit.conversations"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="Conversation.ConversationState.html" title="enum in org.bukkit.conversations"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-  <A HREF="../../../index.html?org/bukkit/conversations/Conversation.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+  <A HREF="../../../index.html%3Forg%252Fbukkit%252Fconversations%252FConversation.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="Conversation.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
 &nbsp;<SCRIPT type="text/javascript">
   <!--
@@ -756,9 +756,9 @@ public void <B>outputNextPrompt</B>()</PRE>
 </TR>
 <TR>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;<A HREF="#nested_class_summary">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+  SUMMARY:&nbsp;<A HREF="Conversation.html#nested_class_summary">NESTED</A>&nbsp;|&nbsp;<A HREF="Conversation.html#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="Conversation.html#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="Conversation.html#method_summary">METHOD</A></FONT></TD>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+DETAIL:&nbsp;<A HREF="Conversation.html#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="Conversation.html#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="Conversation.html#method_detail">METHOD</A></FONT></TD>
 </TR>
 </TABLE>
 <A NAME="skip-navbar_bottom"></A>
