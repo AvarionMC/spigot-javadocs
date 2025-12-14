@@ -31,19 +31,19 @@ jobs:
           python-version: "3.10"
 
       - name: Cache Python packages
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-python
 
       - name: Cache BuildTools
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: ~/BuildTools
           key: ${{ runner.os }}-BuildTools
 
       - name: Cache Maven packages
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven
@@ -83,21 +83,21 @@ jobs:
 
       - name: Post Cache Python packages
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-python
 
       - name: Post Cache BuildTools
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         with:
           path: ~/BuildTools
           key: ${{ runner.os }}-BuildTools
 
       - name: Post Cache Maven packages
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven
