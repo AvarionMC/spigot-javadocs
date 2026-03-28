@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Find all jar files in home directory
         run: find ~ -type f -name \*.jar || true
@@ -31,19 +31,19 @@ jobs:
           python-version: "3.10"
 
       - name: Cache Python packages
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-python
 
       - name: Cache BuildTools
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: ~/BuildTools
           key: ${{ runner.os }}-BuildTools
 
       - name: Cache Maven packages
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven
@@ -74,7 +74,7 @@ jobs:
           python .github/generate_html_overview.py
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           commit-message: "Add new Javadocs files"
           base: main
@@ -83,21 +83,21 @@ jobs:
 
       - name: Post Cache Python packages
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-python
 
       - name: Post Cache BuildTools
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         with:
           path: ~/BuildTools
           key: ${{ runner.os }}-BuildTools
 
       - name: Post Cache Maven packages
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven
