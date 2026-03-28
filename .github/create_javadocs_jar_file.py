@@ -25,6 +25,7 @@ JAVA_PATHS = {
     18: Path(os.getenv("JAVA_HOME_18_X64", "/usr/lib/jvm/java-18-openjdk-amd64")),
     19: Path(os.getenv("JAVA_HOME_19_X64", "/usr/lib/jvm/java-19-openjdk-amd64")),
     21: Path(os.getenv("JAVA_HOME_21_X64", "/usr/lib/jvm/java-21-openjdk-amd64")),
+    25: Path(os.getenv("JAVA_HOME_25_X64", "/usr/lib/jvm/java-25-openjdk-amd64")),
 }
 
 
