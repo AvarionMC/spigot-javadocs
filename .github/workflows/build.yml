@@ -60,6 +60,7 @@ jobs:
             18
             19
             21
+            25
 
       - name: Install Python dependencies
         run: |
